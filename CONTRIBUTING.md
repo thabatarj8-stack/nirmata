@@ -19,6 +19,6 @@ Contributions must label results as exploratory, development, integration, confi
 
 Do not submit secrets, private conversations, client data, access tokens, personal identifiers, or proprietary traces. Synthetic or explicitly consented traces are preferred.
 
-## License note
+## Contribution license
 
-Contribution terms will be finalized together with the repository license before external pull requests are accepted.
+By contributing, you agree that software contributions are licensed under Apache-2.0 and documentation, protocol, taxonomy, diagram, and dataset contributions are licensed under CC BY 4.0.

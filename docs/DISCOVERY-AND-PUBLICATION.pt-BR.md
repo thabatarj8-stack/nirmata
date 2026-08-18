@@ -14,7 +14,7 @@
 
 ## Portões de publicação
 
-- [ ] Escolher licenças para código, documentação e futuros datasets.
+- [x] Escolher licenças para código, documentação e futuros datasets.
 - [ ] Confirmar quais artefatos-fonte dos experimentos podem ser públicos.
 - [ ] Sanitizar identificadores de produção, dados pessoais, material de clientes, tokens e dados privados de holdout.
 - [ ] Publicar `thabatarj8-stack/nirmata` como repositório público.

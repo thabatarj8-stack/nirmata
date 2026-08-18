@@ -78,6 +78,6 @@ Use the repository's [`CITATION.cff`](CITATION.cff). A DOI-backed archival relea
 
 Nirmata is an independent research project by [Tabata Jahoda](https://github.com/thabatarj8-stack).
 
-## License status
+## License
 
-No reuse license has been selected yet. Until a license is added, copyright remains with the author and public visibility does not imply permission to reuse the materials.
+Software is available under Apache-2.0. Documentation, research protocols, taxonomies, diagrams, and public datasets are available under CC BY 4.0. See [LICENSE.md](LICENSE.md).

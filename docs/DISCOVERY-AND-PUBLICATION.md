@@ -14,7 +14,7 @@
 
 ## Publication gates
 
-- [ ] Select licenses for code, documentation, and future datasets.
+- [x] Select licenses for code, documentation, and future datasets.
 - [ ] Confirm which source experiment artifacts may be public.
 - [ ] Sanitize production identifiers, personal data, client material, tokens, and private holdout data.
 - [ ] Publish `thabatarj8-stack/nirmata` as a public repository.

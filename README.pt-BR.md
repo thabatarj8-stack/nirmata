@@ -78,6 +78,6 @@ Use o arquivo [`CITATION.cff`](CITATION.cff). Uma versão arquivada com DOI est�
 
 Nirmata é um projeto independente de pesquisa de [Tabata Jahoda](https://github.com/thabatarj8-stack).
 
-## Estado da licença
+## Licença
 
-Ainda não foi escolhida uma licença de reutilização. Até que uma licença seja adicionada, os direitos permanecem com a autora e visibilidade pública não significa permissão de reutilização.
+O software está disponível sob Apache-2.0. Documentação, protocolos, taxonomias, diagramas e datasets públicos estão disponíveis sob CC BY 4.0. Consulte [LICENSE.md](LICENSE.md).
