@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use or discuss Nirmata, please cite this repository."
+title: "Nirmata: Trajectory-Aware Evaluation and Delegated Authority for AI Agents"
+type: software
+authors:
+  - family-names: Jahoda
+    given-names: Tabata
+version: 0.1.0
+repository-code: "https://github.com/thabatarj8-stack/nirmata"
+url: "https://github.com/thabatarj8-stack/nirmata"
+abstract: >-
+  Nirmata is an independent research program for evaluating AI agents from
+  execution trajectories, delegated-authority events, tool calls, state
+  transitions, and external effects in addition to final outputs.
+keywords:
+  - AI agents
+  - agent evaluation
+  - execution trajectories
+  - delegated authority
+  - agentic AI safety
+  - human-in-the-loop
+  - control integrity
+  - reproducible evaluation
