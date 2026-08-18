@@ -76,7 +76,7 @@ Use the repository's [`CITATION.cff`](CITATION.cff). A DOI-backed archival relea
 
 ## Author
 
-Nirmata is an independent research project by [Tabata Jahoda](https://github.com/thabatarj8-stack).
+Nirmata is an independent research project by [Tabata Jahoda](https://github.com/thabatarj8-stack). Connect on [LinkedIn](https://www.linkedin.com/in/tabata-j-226b6123/).
 
 ## License
 

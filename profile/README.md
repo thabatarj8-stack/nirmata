@@ -16,6 +16,8 @@ Current directions:
 
 Research materials are published in English and Brazilian Portuguese.
 
+[LinkedIn](https://www.linkedin.com/in/tabata-j-226b6123/) · [Nirmata](https://github.com/thabatarj8-stack/nirmata)
+
 ---
 
 ## Português
@@ -23,3 +25,5 @@ Research materials are published in English and Brazilian Portuguese.
 Pesquisadora independente e profissional dedicada à avaliação de agentes de IA, trajetórias de execução, autoridade delegada, integridade de controle e sistemas agênticos aplicados.
 
 O **[Nirmata](https://github.com/thabatarj8-stack/nirmata)** investiga o que a avaliação apenas do resultado final deixa de perceber quando agentes usam ferramentas, atravessam limites de autorização, alteram estados e produzem efeitos externos.
+
+[LinkedIn](https://www.linkedin.com/in/tabata-j-226b6123/) · [Nirmata](https://github.com/thabatarj8-stack/nirmata)

@@ -76,7 +76,7 @@ Use o arquivo [`CITATION.cff`](CITATION.cff). Uma versão arquivada com DOI est�
 
 ## Autoria
 
-Nirmata é um projeto independente de pesquisa de [Tabata Jahoda](https://github.com/thabatarj8-stack).
+Nirmata é um projeto independente de pesquisa de [Tabata Jahoda](https://github.com/thabatarj8-stack). Conecte-se pelo [LinkedIn](https://www.linkedin.com/in/tabata-j-226b6123/).
 
 ## Licença
 
