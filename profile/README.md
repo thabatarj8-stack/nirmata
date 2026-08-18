@@ -15,3 +15,11 @@ Current directions:
 - applied cases in publishing, browser automation, and business operations.
 
 Research materials are published in English and Brazilian Portuguese.
+
+---
+
+## Português
+
+Pesquisadora independente e profissional dedicada à avaliação de agentes de IA, trajetórias de execução, autoridade delegada, integridade de controle e sistemas agênticos aplicados.
+
+O **[Nirmata](https://github.com/thabatarj8-stack/nirmata)** investiga o que a avaliação apenas do resultado final deixa de perceber quando agentes usam ferramentas, atravessam limites de autorização, alteram estados e produzem efeitos externos.
