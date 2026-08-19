@@ -1,0 +1,18 @@
+{
+  "schema": "nirmata-freeze-record",
+  "schema_version": "0.1",
+  "experiment_id": "002",
+  "protocol_version": "1.0",
+  "holdout_version": "1.0",
+  "protocol_sha256": null,
+  "trace_sha256": null,
+  "content_evaluator_sha256": null,
+  "trajectory_evaluator_sha256": null,
+  "scoring_spec_sha256": null,
+  "ground_truth_sha256": "SEALED",
+  "freeze_timestamp_utc": null,
+  "confirmatory_intent_declared": true,
+  "ground_truth_withheld": true,
+  "privacy_review_completed": false,
+  "status": "PRE_FREEZE"
+}
