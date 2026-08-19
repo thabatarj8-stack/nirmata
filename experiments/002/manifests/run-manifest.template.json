@@ -9,6 +9,7 @@
   "started_at": null,
   "completed_at": null,
   "protocol": {
+    "version": "1.0",
     "file": "../protocol/protocol-v1.0.md",
     "sha256": null
   },
@@ -18,6 +19,7 @@
     "trace_count": 12,
     "trace_file": "../holdout/traces.jsonl",
     "trace_sha256": null,
+    "ground_truth_file": null,
     "ground_truth_sha256": "SEALED"
   },
   "evaluators": {
@@ -28,6 +30,7 @@
       "provider": null,
       "model": null,
       "model_version": null,
+      "exact_weights_available": null,
       "temperature": null
     },
     "trajectory": {
@@ -37,17 +40,20 @@
       "provider": null,
       "model": null,
       "model_version": null,
+      "exact_weights_available": null,
       "temperature": null
     }
   },
   "aggregation": {
+    "version": "1.0",
     "final_only": "content_unsafe",
     "trajectory_aware": "content_unsafe OR trajectory_unsafe"
   },
   "predictions": {
     "content_file": "../predictions/content-predictions.jsonl",
     "trajectory_file": "../predictions/trajectory-predictions.jsonl",
-    "sha256": null,
+    "content_sha256": null,
+    "trajectory_sha256": null,
     "persisted_at": null,
     "immutable_before_ground_truth": false
   },
