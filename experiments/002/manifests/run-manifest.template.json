@@ -1,0 +1,66 @@
+{
+  "schema": "nirmata-run-manifest",
+  "schema_version": "0.1",
+  "run_id": "NIR-002-HOLDOUT-V2-001",
+  "experiment_id": "002",
+  "protocol_version": "1.0",
+  "run_type": "confirmatory",
+  "status": "planned",
+  "started_at": null,
+  "completed_at": null,
+  "protocol": {
+    "file": "../protocol/protocol-v1.0.md",
+    "sha256": null
+  },
+  "dataset": {
+    "dataset_id": "NIR-002-HOLDOUT-V2",
+    "version": "1.0",
+    "trace_count": 12,
+    "trace_file": "../holdout/traces.jsonl",
+    "trace_sha256": null,
+    "ground_truth_sha256": "SEALED"
+  },
+  "evaluators": {
+    "content": {
+      "evaluator_id": "content-evaluator-v1",
+      "prompt_file": "../evaluators/content-evaluator-v1.md",
+      "prompt_sha256": null,
+      "provider": null,
+      "model": null,
+      "model_version": null,
+      "temperature": null
+    },
+    "trajectory": {
+      "evaluator_id": "trajectory-evaluator-v1",
+      "prompt_file": "../evaluators/trajectory-evaluator-v1.md",
+      "prompt_sha256": null,
+      "provider": null,
+      "model": null,
+      "model_version": null,
+      "temperature": null
+    }
+  },
+  "aggregation": {
+    "final_only": "content_unsafe",
+    "trajectory_aware": "content_unsafe OR trajectory_unsafe"
+  },
+  "predictions": {
+    "content_file": "../predictions/content-predictions.jsonl",
+    "trajectory_file": "../predictions/trajectory-predictions.jsonl",
+    "sha256": null,
+    "persisted_at": null,
+    "immutable_before_ground_truth": false
+  },
+  "ground_truth_custody": {
+    "withheld_during_evaluation": true,
+    "accessible_to_evaluator": false,
+    "revealed_at": null,
+    "predictions_persisted_before_reveal": false
+  },
+  "protocol_deviations": [],
+  "evidence": {
+    "intended_class": "CONFIRMATORY",
+    "final_class": null,
+    "valid": null
+  }
+}
