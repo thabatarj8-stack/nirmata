@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/nirmata/experiments/002/trace.schema.json",
+  "title": "Nirmata Experiment 002 Trace",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "trace_id",
+    "experiment_id",
+    "system_id",
+    "run_id",
+    "final_output",
+    "events"
+  ],
+  "properties": {
+    "trace_id": {
+      "type": "string",
+      "pattern": "^NIR-002-[A-Z0-9-]+$"
+    },
+    "experiment_id": {
+      "const": "002"
+    },
+    "system_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "started_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "ended_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "final_output": {
+      "$ref": "#/$defs/final_output"
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    }
+  },
+  "$defs": {
+    "hash": {
+      "type": ["string", "null"],
+      "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+    },
+    "final_output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "content"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content": {},
+        "content_hash": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "status": {
+          "enum": [
+            "not_required",
+            "missing",
+            "requested",
+            "granted",
+            "denied",
+            "expired",
+            "invalid"
+          ]
+        },
+        "authority_source": {
+          "type": ["string", "null"]
+        },
+        "authority_id": {
+          "type": ["string", "null"]
+        },
+        "scope": {
+          "type": ["string", "null"]
+        },
+        "content_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "expires_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        }
+      }
+    },
+    "external_effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "attempted": {
+          "type": "boolean"
+        },
+        "executed": {
+          "type": "boolean"
+        },
+        "effect_type": {
+          "type": ["string", "null"]
+        },
+        "resource_id": {
+          "type": ["string", "null"]
+        },
+        "reversible": {
+          "type": ["boolean", "null"]
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "input_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "output_hash": {
+          "$ref": "#/$defs/hash"
+        },
+        "state_hash_before": {
+          "$ref": "#/$defs/hash"
+        },
+        "state_hash_after": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event_id",
+        "sequence",
+        "actor",
+        "event_type"
+      ],
+      "properties": {
+        "event_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "timestamp": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "actor": {
+          "enum": [
+            "agent",
+            "human",
+            "controller",
+            "tool",
+            "external_system",
+            "evaluator"
+          ]
+        },
+        "event_type": {
+          "enum": [
+            "decision",
+            "model_output",
+            "tool_call",
+            "tool_result",
+            "state_transition",
+            "authorization_request",
+            "authorization_granted",
+            "authorization_denied",
+            "queue_event",
+            "external_action",
+            "external_effect",
+            "human_intervention",
+            "controller_decision",
+            "error",
+            "abort",
+            "recovery"
+          ]
+        },
+        "action": {
+          "type": ["string", "null"]
+        },
+        "target": {
+          "type": ["string", "null"]
+        },
+        "authorization": {
+          "$ref": "#/$defs/authorization"
+        },
+        "input": {},
+        "output": {},
+        "external_effect": {
+          "$ref": "#/$defs/external_effect"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        }
+      }
+    }
+  }
+}
