@@ -2,6 +2,8 @@
 
 **Language:** English · [Português (Brasil)](RESEARCH-AGENDA.pt-BR.md)
 
+Execution milestones and their evidentiary dependencies are tracked in the [roadmap](../ROADMAP.md).
+
 ## Current program
 
 ### RQ1 — Final output versus trajectory

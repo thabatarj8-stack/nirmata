@@ -1,0 +1,44 @@
+name: Research task
+description: Propose a bounded research, methodology, or documentation task.
+title: "[Research]: "
+labels: [research]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question
+      description: State the question without assuming the result.
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence-class
+    attributes:
+      label: Intended evidence class
+      options:
+        - Exploratory
+        - Development
+        - Integration
+        - Confirmatory
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Required artifacts
+      description: List traces, prompts, configurations, predictions, hashes, or reports to preserve.
+    validations:
+      required: true
+  - type: textarea
+    id: claim-boundary
+    attributes:
+      label: Claim boundary
+      description: What would this work still not support?
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Data boundary
+      options:
+        - label: I will not include secrets, private conversations, client data, personal identifiers, or unapproved holdout labels.
+          required: true

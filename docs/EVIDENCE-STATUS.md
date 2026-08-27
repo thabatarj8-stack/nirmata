@@ -8,6 +8,7 @@
 | Approval tests A–F | Development | Six known state-machine and source-authentication checks passed in the prototype | General robustness against unseen attacks |
 | Control-integrity tests G–L | Development | Six known tampering, replay, content-integrity, and two-phase-publication checks passed | Production control-plane isolation or cryptographic identity assurance |
 | Experiment #002 Run 002.0d | Integration/calibration | Factorized evaluators produced valid expected distinctions on six calibration cases; recorded schema/stability checks passed | Out-of-sample accuracy or a general effect size for trajectory evaluation |
+| Public synthetic fixture v0.1.0 | Integration fixture | The dependency-free public pipeline validates, classifies, and scores six transparent synthetic cases with deterministic expected outputs | Model performance, robustness, generalization, or confirmatory evidence |
 | Experiment #002 first holdout | Invalidated | The execution stopped before scoring after ground truth entered the evaluator context | Any blind confirmatory performance claim |
 | Instagram comment→DM | Applied operational evidence | A real external comment triggered the deployed reply flow and operational checks were added | SLA, long-term reliability, or general safety of the architecture |
 

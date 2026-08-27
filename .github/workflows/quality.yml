@@ -1,0 +1,44 @@
+name: Quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  reproducibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Validate public artifacts
+        run: |
+          python -m json.tool codemeta.json >/dev/null
+          python -m json.tool reproducibility/schema/trajectory.schema.json >/dev/null
+          python scripts/check_local_links.py
+          python reproducibility/scripts/validate.py
+      - name: Run the synthetic integration fixture
+        run: |
+          python reproducibility/scripts/baseline.py \
+            --output /tmp/nirmata-predictions.jsonl \
+            --manifest /tmp/nirmata-manifest.json
+          python reproducibility/scripts/score.py \
+            --predictions /tmp/nirmata-predictions.jsonl \
+            --report /tmp/nirmata-score.json
+      - name: Run tests
+        run: python -m unittest discover -s reproducibility/tests -v
+
+  markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: DavidAnson/markdownlint-cli2-action@v23
+        with:
+          globs: |
+            **/*.md
+            #LICENSES/**

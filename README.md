@@ -14,10 +14,11 @@ When an agent uses tools, changes state, or acts in an external system, a plausi
 |---|---|
 | Understand the idea in five minutes | [Why final answers are not enough](articles/en/why-final-answers-are-not-enough.md) |
 | Inspect the evaluation design | [Methodology](docs/METHODOLOGY.md) |
+| Run the public calibration fixture | [Reproducibility package](reproducibility/README.md) |
 | Check what the evidence does and does not support | [Evidence status](docs/EVIDENCE-STATUS.md) |
 | Review the experiment history | [Experiment registry](experiments/README.md) |
 | See the practical relevance | [Applied case studies](case-studies/README.md) |
-| Replicate, challenge, or contribute | [Research agenda](docs/RESEARCH-AGENDA.md) · [Contributing](CONTRIBUTING.md) |
+| Replicate, challenge, or contribute | [Roadmap](ROADMAP.md) · [Research agenda](docs/RESEARCH-AGENDA.md) · [Contributing](CONTRIBUTING.md) |
 
 ## The evaluation model
 
@@ -72,6 +73,7 @@ articles/       Accessible essays in English and Portuguese
 case-studies/   Applied operational cases
 docs/           Method, evidence ledger, literature map, and agenda
 experiments/    Experiment registry and status
+reproducibility/ Schema, synthetic traces, evaluator, scoring, and tests
 ```
 
 ## Citation and license

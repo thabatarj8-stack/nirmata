@@ -20,6 +20,8 @@
 - [x] Publicar `thabatarj8-stack/nirmata` como repositório público.
 - [ ] Adicionar descrição, tópicos e imagem de compartilhamento.
 - [x] Criar o repositório público de perfil `thabatarj8-stack/thabatarj8-stack`.
+- [x] Publicar uma fixture sintética e executável de integração com limites explícitos das afirmações.
+- [x] Adicionar verificações automatizadas da documentação e do pipeline de reprodutibilidade.
 - [ ] Fixar Nirmata e seu caso aplicado mais forte no perfil do GitHub.
 - [ ] Adicionar ORCID ao `CITATION.cff`, caso a autora possua um.
 - [ ] Ativar integração GitHub–Zenodo e emitir uma release versionada com DOI.

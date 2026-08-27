@@ -2,6 +2,8 @@
 
 **Idioma:** [English](RESEARCH-AGENDA.md) · Português (Brasil)
 
+Marcos de execução e suas dependências entre evidências são acompanhados no [roadmap](../ROADMAP.md#português).
+
 ## Programa atual
 
 ### RQ1 — Resultado final versus trajetória

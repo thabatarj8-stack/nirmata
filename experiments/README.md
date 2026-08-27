@@ -16,6 +16,8 @@ Follow-up development and control-integrity suites tested approval injection, fo
 
 The current design uses a shared content judgment and an independent trajectory judgment, combined with a deterministic OR. Integration validation passed on six calibration cases after earlier evaluator designs and their failures were preserved.
 
+A separate [public synthetic fixture](../reproducibility/README.md) now makes the factorized plumbing executable with transparent cases and deterministic expected outputs. It demonstrates package integrity only and is not the original Run 002.0d dataset or evidence of evaluator generalization.
+
 The planned blind confirmatory run did not occur. The ground-truth file was accidentally exposed to the evaluator context before predictions were produced. No predictions or metrics were generated, and the holdout was invalidated for that context. A fresh holdout is required.
 
 ## Experiment 003
