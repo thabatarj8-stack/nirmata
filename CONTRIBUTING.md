@@ -16,6 +16,17 @@ Research critique, protocol review, replication attempts, and adversarial cases 
 
 Contributions must label results as exploratory, development, integration, confirmatory, or invalidated. Do not convert calibration performance into a general claim, and do not remove failed runs from the record.
 
+## Local checks
+
+Run the public validation suite before opening a pull request:
+
+```bash
+python3 scripts/check_local_links.py
+python3 reproducibility/scripts/validate.py
+python3 -m unittest discover -s reproducibility/tests -v
+npx --yes markdownlint-cli2@0.23.2 "**/*.md" "#LICENSES/**"
+```
+
 ## Data safety
 
 Do not submit secrets, private conversations, client data, access tokens, personal identifiers, or proprietary traces. Synthetic or explicitly consented traces are preferred.

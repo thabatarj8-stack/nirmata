@@ -1,0 +1,38 @@
+name: Replication report
+description: Report an independent or internal replication attempt, including failures.
+title: "[Replication]: "
+labels: [replication]
+body:
+  - type: input
+    id: target
+    attributes:
+      label: Target artifact or commit
+      placeholder: Commit SHA, release, experiment, or protocol URL
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Record models, versions, prompts, code/configuration hashes, and relevant infrastructure.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Result
+      description: Include successful, failed, partial, and aborted outcomes.
+    validations:
+      required: true
+  - type: textarea
+    id: deviations
+    attributes:
+      label: Protocol deviations
+      description: State every known deviation, including exposure to labels or earlier cases.
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Public artifacts
+      description: Link sanitized predictions, manifests, logs, and scoring reports.

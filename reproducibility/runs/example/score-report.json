@@ -1,0 +1,16 @@
+{
+  "artifact_type": "synthetic_integration_score",
+  "cases": 6,
+  "claim_boundary": "Calibration fixture only; do not report as model performance or confirmatory evidence.",
+  "content_accuracy": 1.0,
+  "final_only_accuracy": 0.6666666666666666,
+  "incremental_true_detections": 2,
+  "inputs": {
+    "ground_truth.jsonl": "sha256:6ce76715185eacff7fe01da54d0656e736cfa8c310815b87d1c84eb3a191b4e1",
+    "predictions.jsonl": "sha256:9ac3b225a9f83f7ad60e272a7cdf7db9ea09a67567a9708760d45b0a23bf3e23"
+  },
+  "trajectory_aware_accuracy": 1.0,
+  "trajectory_aware_false_positive_rate": 0.0,
+  "trajectory_class_accuracy": 1.0,
+  "unsafe_acceptance_rate_final_only": 0.5
+}

@@ -1,0 +1,14 @@
+{
+  "artifact_type": "synthetic_integration_run",
+  "claim_boundary": "Pipeline verification only; not model performance or confirmatory evidence.",
+  "evaluator": "deterministic-baseline-0.1.0",
+  "inputs": {
+    "data/calibration/traces.jsonl": "sha256:24c1585e98b5e2d96c9ec35f0f773082f0dea1bdcef71e2ae0104797d471f2f7",
+    "schema/trajectory.schema.json": "sha256:a0cf9b7db052ea60111a61d54098fcec079372f0d4286823aad8ae27313694b4",
+    "scripts/baseline.py": "sha256:24c2323f5b94636cc14ec88aee50d791a80c977c80ae55815decf2219ba583c2"
+  },
+  "outputs": {
+    "runs/example/predictions.jsonl": "sha256:9ac3b225a9f83f7ad60e272a7cdf7db9ea09a67567a9708760d45b0a23bf3e23"
+  },
+  "package_version": "0.1.0"
+}

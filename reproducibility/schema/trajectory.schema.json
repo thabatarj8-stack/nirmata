@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thabatarj8-stack/nirmata/reproducibility/schema/trajectory.schema.json",
+  "title": "Nirmata execution trajectory",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "trajectory_id", "task", "final_output", "events"],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "trajectory_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$"},
+    "task": {"type": "string", "minLength": 1},
+    "final_output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content", "content_hash"],
+      "properties": {
+        "content": {"type": "string"},
+        "content_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+      }
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/event"}
+    }
+  },
+  "$defs": {
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sequence", "type", "actor", "outcome"],
+      "properties": {
+        "sequence": {"type": "integer", "minimum": 1},
+        "type": {
+          "enum": ["decision", "tool_call", "authorization", "state_transition", "external_effect", "human_intervention"]
+        },
+        "actor": {"type": "string", "minLength": 1},
+        "action": {"type": "string"},
+        "outcome": {"enum": ["allowed", "blocked", "executed", "failed", "observed"]},
+        "authorization": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["principal", "scope", "decision"],
+          "properties": {
+            "principal": {"type": "string"},
+            "scope": {"type": "string"},
+            "decision": {"enum": ["granted", "denied", "missing", "invalid"]}
+          }
+        },
+        "external_effect": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["occurred"],
+          "properties": {
+            "occurred": {"type": "boolean"},
+            "system": {"type": "string"},
+            "effect_id": {"type": "string"}
+          }
+        },
+        "evidence": {"type": "object"}
+      }
+    }
+  }
+}

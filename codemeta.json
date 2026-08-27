@@ -8,7 +8,7 @@
   "dateModified": "2026-08-27",
   "codeRepository": "https://github.com/thabatarj8-stack/nirmata",
   "issueTracker": "https://github.com/thabatarj8-stack/nirmata/issues",
-  "programmingLanguage": ["Markdown", "JSON"],
+  "programmingLanguage": ["Python", "Markdown", "JSON"],
   "keywords": [
     "AI agents",
     "agent evaluation",
