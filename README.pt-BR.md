@@ -4,6 +4,8 @@
 
 **Nirmata é um programa independente de pesquisa que avalia agentes de IA pelo que fazem — não apenas pelo que dizem.**
 
+**Versão atual:** candidata a release `v0.1.0` · [Conteúdo e verificação da release](releases/v0.1.0/README.md)
+
 Quando um agente usa ferramentas, altera estados ou atua em um sistema externo, uma resposta final plausível é evidência incompleta. A trajetória pode conter um erro de autorização, um ataque bloqueado, um controle quebrado ou um efeito que a resposta nunca menciona. O Nirmata torna esse caminho inspecionável e mantém avaliações fracassadas no registro da pesquisa.
 
 > **Estado das evidências:** piloto em estágio inicial. Verificações de desenvolvimento e integração passaram, mas nenhum resultado confirmatório cego é reivindicado. O primeiro holdout planejado foi invalidado antes da pontuação porque seu gabarito entrou no contexto do avaliador. [Consulte o registro de evidências.](docs/EVIDENCE-STATUS.pt-BR.md)

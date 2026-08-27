@@ -2,7 +2,7 @@
 
 ## Decision
 
-The tracked research package is suitable to continue toward a release candidate. No production artifact, holdout answer key, or recognized secret was found in the current tree or reachable file history. Release preparation remains conditional on resolving or explicitly accepting the author-email exposure described below.
+The tracked research package is suitable to continue toward a release candidate. No production artifact, holdout answer key, or recognized secret was found in the current tree or reachable file history. The repository owner accepted the existing author-email metadata exposure on 2026-08-27 and chose to preserve the public Git history.
 
 ## Scope
 
@@ -45,6 +45,8 @@ Recommended actions before the release candidate:
 
 No history rewrite was performed during this audit.
 
+The repository owner accepted this existing exposure on 2026-08-27. Future commits should use the configured GitHub no-reply identity; the acceptance does not imply that additional personal contact information may be published.
+
 ## Limitations
 
 Pattern matching can detect known formats and direct identifiers, but it cannot prove the absence of every secret or infer whether every opaque identifier maps to a real subject. The applied case therefore retains its separate semantic publication review, and future evidence packages still require human review under the Minimum Necessary Disclosure Principle.
@@ -56,5 +58,5 @@ Pattern matching can detect known formats and direct identifiers, but it cannot 
 - [x] Experiment 002 checked for premature ground-truth disclosure.
 - [x] GitHub secret-scanning alerts checked.
 - [x] Known limitation and author-email metadata exposure documented.
-- [ ] Author-email metadata exposure accepted or remediated.
-- [ ] Release-candidate hashes generated after the final tree is frozen.
+- [x] Author-email metadata exposure accepted or remediated.
+- [x] Release-candidate hashes generated after the final tree is frozen.
