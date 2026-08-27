@@ -15,8 +15,8 @@
 ## Portões de publicação
 
 - [x] Escolher licenças para código, documentação e futuros datasets.
-- [ ] Confirmar quais artefatos-fonte dos experimentos podem ser públicos.
-- [ ] Sanitizar identificadores de produção, dados pessoais, material de clientes, tokens e dados privados de holdout.
+- [x] Confirmar quais artefatos-fonte dos experimentos podem ser públicos ([auditoria de publicação](PUBLICATION-AUDIT-2026-08-27.md)).
+- [x] Sanitizar identificadores de produção, dados pessoais, material de clientes, tokens e dados privados de holdout.
 - [x] Publicar `thabatarj8-stack/nirmata` como repositório público.
 - [ ] Adicionar descrição, tópicos e imagem de compartilhamento.
 - [x] Criar o repositório público de perfil `thabatarj8-stack/thabatarj8-stack`.
@@ -24,7 +24,7 @@
 - [x] Adicionar verificações automatizadas da documentação e do pipeline de reprodutibilidade.
 - [ ] Fixar Nirmata e seu caso aplicado mais forte no perfil do GitHub.
 - [x] Adicionar o ORCID da autora aos metadados de citação e do projeto.
-- [ ] Ativar integração GitHub–Zenodo e emitir uma release versionada com DOI.
+- [x] Ativar integração GitHub–Zenodo e emitir uma release versionada com DOI ([10.5281/zenodo.22132451](https://doi.org/10.5281/zenodo.22132451)).
 - [ ] Registrar futuros protocolos confirmatórios em serviço externo com timestamp antes da execução.
 - [ ] Publicar nota de método ou preprint ligado à versão com DOI.
 

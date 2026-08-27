@@ -3,6 +3,7 @@
   "@type": "SoftwareSourceCode",
   "name": "Nirmata",
   "description": "An independent pilot research program for trajectory-aware evaluation, delegated authority, and failure-preserving study of AI agents.",
+  "identifier": "https://doi.org/10.5281/zenodo.22132451",
   "version": "0.1.0",
   "dateCreated": "2026-08-17",
   "dateModified": "2026-08-27",

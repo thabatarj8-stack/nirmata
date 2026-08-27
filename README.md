@@ -4,7 +4,9 @@
 
 **Nirmata is an independent research program that evaluates AI agents from what they do—not only from what they say.**
 
-**Current version:** `v0.1.0` release candidate · [Release contents and verification](releases/v0.1.0/README.md)
+**Current version:** `v0.1.0` · [Release contents and verification](releases/v0.1.0/README.md)
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22132451.svg)](https://doi.org/10.5281/zenodo.22132451)
 
 When an agent uses tools, changes state, or acts in an external system, a plausible final answer is incomplete evidence. The execution path may contain an authorization error, a blocked attack, a broken control, or an effect that the answer never mentions. Nirmata makes that path inspectable and keeps failed evaluations in the research record.
 
@@ -81,7 +83,7 @@ reproducibility/ Schema, synthetic traces, evaluator, scoring, and tests
 
 ## Citation and license
 
-Use [`CITATION.cff`](CITATION.cff) to cite the project. A DOI-backed archival release is planned after the public research package is ready.
+Use [`CITATION.cff`](CITATION.cff) to cite the project. Version `v0.1.0` is archived at [DOI 10.5281/zenodo.22132451](https://doi.org/10.5281/zenodo.22132451).
 
 Software, when published here, is licensed under Apache-2.0. Documentation, protocols, taxonomies, diagrams, articles, and public datasets are licensed under CC BY 4.0. See [LICENSE.md](LICENSE.md).
 
