@@ -18,7 +18,7 @@ The roadmap is ordered by evidentiary dependency, not by visibility. A DOI and a
 - [x] Review every public artifact for secrets, identifiers, client material, and holdout leakage ([audit](docs/PUBLICATION-AUDIT-2026-08-27.md)).
 - [x] Add ORCID to citation and project metadata.
 - [x] Freeze a `v0.1.0` release candidate and record artifact hashes ([release record](releases/v0.1.0/README.md)).
-- [ ] Connect GitHub to Zenodo and archive the release with a DOI.
+- [x] Connect GitHub to Zenodo and archive the release with a DOI ([10.5281/zenodo.22132451](https://doi.org/10.5281/zenodo.22132451)).
 
 ## Phase 3 — Fresh blind pilot
 
@@ -55,7 +55,7 @@ O roadmap segue a dependência entre evidências, não a visibilidade. Um DOI e 
 - [x] Revisar todos os artefatos públicos em busca de segredos, identificadores, material de clientes e vazamento de holdout ([auditoria](docs/PUBLICATION-AUDIT-2026-08-27.md)).
 - [x] Adicionar ORCID aos metadados de citação e do projeto.
 - [x] Congelar uma candidata `v0.1.0` e registrar hashes dos artefatos ([registro da release](releases/v0.1.0/README.md)).
-- [ ] Conectar GitHub ao Zenodo e arquivar a release com DOI.
+- [x] Conectar GitHub ao Zenodo e arquivar a release com DOI ([10.5281/zenodo.22132451](https://doi.org/10.5281/zenodo.22132451)).
 
 ### Fase 3 — Novo piloto cego
 

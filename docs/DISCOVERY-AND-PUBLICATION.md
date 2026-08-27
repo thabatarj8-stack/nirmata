@@ -15,8 +15,8 @@
 ## Publication gates
 
 - [x] Select licenses for code, documentation, and future datasets.
-- [ ] Confirm which source experiment artifacts may be public.
-- [ ] Sanitize production identifiers, personal data, client material, tokens, and private holdout data.
+- [x] Confirm which source experiment artifacts may be public ([publication audit](PUBLICATION-AUDIT-2026-08-27.md)).
+- [x] Sanitize production identifiers, personal data, client material, tokens, and private holdout data.
 - [x] Publish `thabatarj8-stack/nirmata` as a public repository.
 - [ ] Add repository description, topics, and social preview image.
 - [x] Create the public profile repository `thabatarj8-stack/thabatarj8-stack`.
@@ -24,7 +24,7 @@
 - [x] Add automated checks for documentation and the reproducibility pipeline.
 - [ ] Pin Nirmata and its strongest applied case to the GitHub profile.
 - [x] Add the author's ORCID to citation and project metadata.
-- [ ] Enable GitHub–Zenodo archiving and issue a versioned release/DOI.
+- [x] Enable GitHub–Zenodo archiving and issue a versioned release/DOI ([10.5281/zenodo.22132451](https://doi.org/10.5281/zenodo.22132451)).
 - [ ] Register future confirmatory protocols in an external timestamped service before execution.
 - [ ] Publish a methods note or preprint linking the DOI-backed release.
 

@@ -1,4 +1,4 @@
-# Nirmata v0.1.0 release candidate
+# Nirmata v0.1.0
 
 **Freeze date:** 2026-08-27
 
@@ -32,8 +32,8 @@ The release was prepared only after the reproducibility suite, JSON Schema valid
 
 ## Archival status
 
-The repository was enabled and successfully synchronized in the Zenodo GitHub integration on 2026-08-27, before publication. The version-specific DOI remains pending until Zenodo processes the GitHub release.
+The repository was enabled and successfully synchronized in the Zenodo GitHub integration before publication. Zenodo archived the release on 2026-08-27 as [DOI 10.5281/zenodo.22132451](https://doi.org/10.5281/zenodo.22132451). The concept DOI for all Nirmata versions is `10.5281/zenodo.22132450`.
 
 ## Citation
 
-Use the repository [`CITATION.cff`](../../CITATION.cff). Add the version-specific DOI after Zenodo finishes processing the GitHub release.
+Use the repository [`CITATION.cff`](../../CITATION.cff) or cite the version-specific DOI `10.5281/zenodo.22132451`.
