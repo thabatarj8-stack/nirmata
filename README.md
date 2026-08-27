@@ -4,6 +4,8 @@
 
 **Nirmata is an independent research program that evaluates AI agents from what they do—not only from what they say.**
 
+**Current version:** `v0.1.0` release candidate · [Release contents and verification](releases/v0.1.0/README.md)
+
 When an agent uses tools, changes state, or acts in an external system, a plausible final answer is incomplete evidence. The execution path may contain an authorization error, a blocked attack, a broken control, or an effect that the answer never mentions. Nirmata makes that path inspectable and keeps failed evaluations in the research record.
 
 > **Evidence status:** early-stage pilot. Development and integration checks have passed, but no blind confirmatory result is claimed. The first planned holdout was invalidated before scoring because its answer key entered the evaluator context. [See the evidence ledger.](docs/EVIDENCE-STATUS.md)
