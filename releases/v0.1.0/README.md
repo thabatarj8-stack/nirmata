@@ -32,7 +32,7 @@ The release was prepared only after the reproducibility suite, JSON Schema valid
 
 ## Archival status
 
-GitHub release publication and DOI archival are intentionally pending until the repository is enabled in the Zenodo GitHub integration. This ordering prevents publication before the archival integration is ready.
+The repository was enabled and successfully synchronized in the Zenodo GitHub integration on 2026-08-27, before publication. The version-specific DOI remains pending until Zenodo processes the GitHub release.
 
 ## Citation
 
