@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
@@ -23,6 +25,7 @@ jobs:
           python -m json.tool codemeta.json >/dev/null
           python -m json.tool reproducibility/schema/trajectory.schema.json >/dev/null
           python scripts/check_local_links.py
+          python scripts/audit_publication_safety.py --history
           python scripts/validate_experiment_002.py
           python reproducibility/scripts/validate.py
       - name: Run the synthetic integration fixture
