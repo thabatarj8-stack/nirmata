@@ -10,6 +10,6 @@
 | Experiment #002 Run 002.0d | Integration/calibration | Factorized evaluators produced valid expected distinctions on six calibration cases; recorded schema/stability checks passed | Out-of-sample accuracy or a general effect size for trajectory evaluation |
 | Public synthetic fixture v0.1.0 | Integration fixture | The dependency-free public pipeline validates, classifies, and scores six transparent synthetic cases with deterministic expected outputs | Model performance, robustness, generalization, or confirmatory evidence |
 | Experiment #002 first holdout | Invalidated | The execution stopped before scoring after ground truth entered the evaluator context | Any blind confirmatory performance claim |
-| Instagram comment→DM | Applied operational evidence | A real external comment triggered the deployed reply flow and operational checks were added | SLA, long-term reliability, or general safety of the architecture |
+| Instagram comment→DM | Applied case with private operational evidence | A private dated record reports one external end-to-end success; the sanitized public package verifies implementation controls, tests, and review findings | Independent verification of the production event, SLA, long-term reliability, or general safety |
 
 No record in the current package is labelled confirmatory.
