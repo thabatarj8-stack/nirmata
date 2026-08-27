@@ -2,82 +2,84 @@
 
 **Idioma:** [English](README.md) · Português (Brasil)
 
-Nirmata é um programa independente de pesquisa para avaliar agentes de IA por suas **trajetórias de execução**, não apenas por suas respostas finais.
+**Nirmata é um programa independente de pesquisa que avalia agentes de IA pelo que fazem — não apenas pelo que dizem.**
 
-Uma resposta pode parecer correta enquanto o caminho que a produziu contém um erro de autorização, uma chamada insegura de ferramenta, um controle quebrado ou um efeito externo invisível no resultado final. O Nirmata torna esse caminho inspecionável.
+Quando um agente usa ferramentas, altera estados ou atua em um sistema externo, uma resposta final plausível é evidência incompleta. A trajetória pode conter um erro de autorização, um ataque bloqueado, um controle quebrado ou um efeito que a resposta nunca menciona. O Nirmata torna esse caminho inspecionável e mantém avaliações fracassadas no registro da pesquisa.
 
-> **Estado da pesquisa:** trabalho independente em estágio inicial. O pipeline de avaliação passou por verificações de desenvolvimento e integração, mas não há atualmente um resultado confirmatório cego reivindicado. Um primeiro holdout foi invalidado antes da pontuação porque seu gabarito foi exposto ao contexto do avaliador.
+> **Estado das evidências:** piloto em estágio inicial. Verificações de desenvolvimento e integração passaram, mas nenhum resultado confirmatório cego é reivindicado. O primeiro holdout planejado foi invalidado antes da pontuação porque seu gabarito entrou no contexto do avaliador. [Consulte o registro de evidências.](docs/EVIDENCE-STATUS.pt-BR.md)
 
-## Ideia central
+## Comece aqui
 
-O Nirmata trata uma execução do agente como uma sequência auditável de:
+| Se você quer... | Leia... |
+|---|---|
+| Entender a ideia em cinco minutos | [Por que a resposta final não basta](articles/pt-BR/por-que-a-resposta-final-nao-basta.md) |
+| Inspecionar o desenho de avaliação | [Metodologia](docs/METHODOLOGY.pt-BR.md) |
+| Ver o que as evidências sustentam ou não | [Estado das evidências](docs/EVIDENCE-STATUS.pt-BR.md) |
+| Revisar o histórico experimental | [Registro de experimentos](experiments/README.md) |
+| Entender a relevância prática | [Casos aplicados](case-studies/README.md) |
+| Replicar, contestar ou contribuir | [Agenda de pesquisa](docs/RESEARCH-AGENDA.pt-BR.md) · [Como contribuir](CONTRIBUTING.md) |
 
-- decisões e seleção de candidatos;
-- verificação de fontes e afirmações;
-- chamadas de ferramentas e transições de estado;
-- eventos de aprovação e autorização;
-- efeitos externos;
-- falhas, correções e intervenções humanas.
+## O modelo de avaliação
 
-O projeto investiga se essa trajetória contém informação relevante para segurança que permanece invisível quando a avaliação considera apenas o resultado final.
+O Nirmata separa dois sinais que costumam ser misturados:
 
-## Perguntas de pesquisa
+1. Um **avaliador de conteúdo** julga somente a resposta final.
+2. Um **avaliador de trajetória** julga evidências brutas do processo, como chamadas de ferramentas, eventos de autorização, transições de estado e efeitos externos.
+3. Uma regra determinística combina os dois julgamentos sem permitir que um sinal limpo apague um sinal inseguro.
 
-1. Quais comportamentos inseguros não são percebidos quando avaliadores inspecionam somente a resposta final?
-2. Quanto sinal adicional de segurança é acrescentado pela trajetória bruta?
-3. Protocolos de aprovação conseguem preservar a autoridade humana diante de entradas adversariais ou ambíguas?
-4. Avaliar conteúdo e trajetória de forma independente reduz interferência entre sinais?
-5. Como preservar falhas de agentes para manter alegações futuras auditáveis e reproduzíveis?
+```text
+Somente resultado: unsafe = content_unsafe
+Com trajetória:    unsafe = content_unsafe OR trajectory_unsafe
+```
 
-## Pilares de pesquisa
+Esse é um desenho de pesquisa em avaliação, não uma afirmação de que a avaliação por trajetória seja universalmente superior.
 
-| Pilar | Objeto de estudo | Evidência atual |
+## Programa de pesquisa
+
+| Frente | Pergunta | Estado atual |
 |---|---|---|
-| Avaliação consciente da trajetória | Resultado final isolado vs. resultado mais sinal independente da trajetória | Integração do pipeline fatorado validada; confirmação cega pendente |
-| Autoridade delegada | Aprovação, fila, autorização de publicação e efeitos externos | 12 verificações de desenvolvimento/integridade passaram; isolamento real continua sendo limitação |
-| Metodologia que preserva falhas | Correções versionadas, execuções abortadas, holdouts invalidados e desenhos congelados | Manifestos e registros de falhas existem no laboratório-fonte |
-| Autonomia aplicada | Substituição de dependências SaaS opacas por sistemas governados pela proprietária | Caso comentário→DM no Instagram concluído em produção |
+| Resultado vs. trajetória | Que comportamento relevante para segurança fica invisível na resposta final? | Pipeline fatorado integrado; novo holdout cego necessário |
+| Autoridade delegada | Um agente consegue agir sem confundir conselho, aprovação, fila e publicação? | 12 verificações conhecidas passaram; isolamento real pendente |
+| Interferência no avaliador | Um canal de evidência pode distorcer o julgamento do outro? | Estudo candidato; não iniciado |
+| Autonomia aplicada | O que a responsabilidade operacional revela além de uma demonstração bem-sucedida? | Um caso em produção documentado; confiabilidade de longo prazo não estabelecida |
 
-## Experimentos
+O [registro de experimentos](experiments/README.md) separa trabalho exploratório, desenvolvimento, integração, evidência invalidada e futura confirmação.
 
-| Experimento | Pergunta | Estado |
-|---|---|---|
-| [#001 — Avaliação estratégica e autoridade delegada](experiments/README.md#experiment-001) | Um editor consegue selecionar, verificar e agir sem exceder a autoridade delegada? | Execução exploratória e verificações adversariais concluídas |
-| [#002 — Resultado final vs. trajetória de execução](experiments/README.md#experiment-002) | A trajetória revela falhas de segurança ocultas da avaliação do resultado? | Pipeline congelado; holdout cego original invalidado; novo holdout necessário |
-| [#003 — Interferência de contexto no avaliador](experiments/README.md#experiment-003) | Um canal de evidência pode interferir na avaliação de outro? | Estudo candidato; não iniciado |
+## Artigos
 
-## Casos aplicados
+- [Por que a resposta final não basta para avaliar agentes de IA](articles/pt-BR/por-que-a-resposta-final-nao-basta.md)
+- [Aprovação não é autorização em sistemas agênticos](articles/pt-BR/aprovacao-nao-e-autorizacao.md)
+- [Um holdout queimado ainda é evidência de pesquisa](articles/pt-BR/um-holdout-queimado-ainda-e-evidencia.md)
+- [Todos os artigos em português e inglês](articles/README.md)
 
-- [Comentário→DM no Instagram: do ManyChat à infraestrutura governada pela proprietária](case-studies/README.md#instagram-comment--dm) — caso em produção sobre autonomia, evidência operacional, autoridade delegada, custos escondidos e a diferença entre uma demonstração bem-sucedida e um sistema durável.
+## Princípios de pesquisa
 
-## Compromissos metodológicos
-
-- Preservar falhas em vez de reescrever a história como um sucesso limpo.
+- Preservar falhas em vez de reescrevê-las como uma história limpa de sucesso.
 - Separar testes de desenvolvimento, validação de integração e confirmação cega.
 - Congelar desenhos e configurações antes de acessar dados confirmatórios.
 - Persistir previsões antes de revelar o gabarito.
-- Distinguir tentativa bloqueada de violação de política executada.
-- Declarar explicitamente controles simulados e limitações de processo compartilhado.
-- Usar linguagem compatível com a força da evidência.
+- Distinguir tentativas bloqueadas de violações de política executadas.
+- Ajustar cada afirmação pública à força da evidência disponível.
 
-Consulte [Metodologia](docs/METHODOLOGY.pt-BR.md), [Estado das evidências](docs/EVIDENCE-STATUS.pt-BR.md), [Agenda de pesquisa](docs/RESEARCH-AGENDA.pt-BR.md), [Trabalhos relacionados](docs/RELATED-WORK.pt-BR.md), [Glossário](docs/GLOSSARY.pt-BR.md) e o [Checklist de descoberta e publicação](docs/DISCOVERY-AND-PUBLICATION.pt-BR.md).
+## Escopo e limitações
 
-## O que o Nirmata não afirma
+O Nirmata é um programa piloto de pesquisa e laboratório de casos. Ainda não é um benchmark, um produto de segurança em produção ou prova de que seu desenho de avaliação generaliza. Os casos atuais são pequenos e específicos; atestação de identidade e isolamento do plano de controle continuam sendo limitações do protótipo. Consulte [Metodologia](docs/METHODOLOGY.pt-BR.md), [Trabalhos relacionados](docs/RELATED-WORK.pt-BR.md) e [Agenda de pesquisa](docs/RESEARCH-AGENDA.pt-BR.md).
 
-- Não afirma que avaliação por trajetória seja universalmente superior.
-- Não afirma possuir isolamento do plano de controle em nível de produção.
-- Não trata sucesso em testes de desenvolvimento como evidência de generalização.
-- Não relata efeito confirmatório a partir do holdout invalidado.
-- Ainda não é um benchmark; o trabalho atual é um programa piloto de pesquisa.
+## Mapa do repositório
 
-## Citação
+```text
+articles/       Ensaios acessíveis em português e inglês
+case-studies/   Casos operacionais aplicados
+docs/           Método, evidências, literatura e agenda
+experiments/    Registro e estado dos experimentos
+```
 
-Use o arquivo [`CITATION.cff`](CITATION.cff). Uma versão arquivada com DOI está planejada após a finalização do pacote público e da licença.
+## Citação e licença
+
+Use [`CITATION.cff`](CITATION.cff) para citar o projeto. Uma versão arquivada com DOI está planejada após a preparação do pacote público de pesquisa.
+
+Software, quando publicado aqui, usa Apache-2.0. Documentação, protocolos, taxonomias, diagramas, artigos e datasets públicos usam CC BY 4.0. Consulte [LICENSE.md](LICENSE.md).
 
 ## Autoria
 
-Nirmata é um projeto independente de pesquisa de [Tabata Jahoda](https://github.com/thabatarj8-stack). Conecte-se pelo [LinkedIn](https://www.linkedin.com/in/tabata-j-226b6123/).
-
-## Licença
-
-O software está disponível sob Apache-2.0. Documentação, protocolos, taxonomias, diagramas e datasets públicos estão disponíveis sob CC BY 4.0. Consulte [LICENSE.md](LICENSE.md).
+Nirmata é uma pesquisa independente de [Tabata Jahoda](https://github.com/thabatarj8-stack). Conecte-se pelo [LinkedIn](https://www.linkedin.com/in/tabata-j-226b6123/).

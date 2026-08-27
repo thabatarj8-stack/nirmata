@@ -9,6 +9,7 @@ Research critique, protocol review, replication attempts, and adversarial cases 
 - propose matched trajectory cases without exposing answers to evaluators;
 - reproduce an evaluator on a different model or agentic system;
 - improve the minimal trajectory schema;
+- contribute an accessible article or substantive English/Portuguese translation that preserves evidence strength;
 - report security or privacy risks privately.
 
 ## Evidence discipline
@@ -21,4 +22,4 @@ Do not submit secrets, private conversations, client data, access tokens, person
 
 ## Contribution license
 
-By contributing, you agree that software contributions are licensed under Apache-2.0 and documentation, protocol, taxonomy, diagram, and dataset contributions are licensed under CC BY 4.0.
+By contributing, you agree that software contributions are licensed under Apache-2.0 and documentation, article, protocol, taxonomy, diagram, and dataset contributions are licensed under CC BY 4.0.

@@ -4,11 +4,11 @@
 
 ## Metadados do GitHub
 
-**Descrição sugerida para o repositório**
+### Descrição sugerida para o repositório
 
 > Pesquisa independente sobre avaliação de agentes de IA por trajetória, autoridade delegada, integridade de controle e reprodutibilidade que preserva falhas.
 
-**Tópicos sugeridos**
+### Tópicos sugeridos
 
 `ai-agents`, `agent-evaluation`, `agent-trajectories`, `agentic-ai`, `ai-safety`, `ai-governance`, `delegated-authority`, `human-in-the-loop`, `tool-use`, `control-integrity`, `reproducible-research`, `llm-evaluation`
 
@@ -17,9 +17,9 @@
 - [x] Escolher licenças para código, documentação e futuros datasets.
 - [ ] Confirmar quais artefatos-fonte dos experimentos podem ser públicos.
 - [ ] Sanitizar identificadores de produção, dados pessoais, material de clientes, tokens e dados privados de holdout.
-- [ ] Publicar `thabatarj8-stack/nirmata` como repositório público.
+- [x] Publicar `thabatarj8-stack/nirmata` como repositório público.
 - [ ] Adicionar descrição, tópicos e imagem de compartilhamento.
-- [ ] Criar o repositório público de perfil `thabatarj8-stack/thabatarj8-stack` usando `profile/README.md`.
+- [x] Criar o repositório público de perfil `thabatarj8-stack/thabatarj8-stack`.
 - [ ] Fixar Nirmata e seu caso aplicado mais forte no perfil do GitHub.
 - [ ] Adicionar ORCID ao `CITATION.cff`, caso a autora possua um.
 - [ ] Ativar integração GitHub–Zenodo e emitir uma release versionada com DOI.
