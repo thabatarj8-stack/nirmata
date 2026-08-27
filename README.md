@@ -84,4 +84,4 @@ Software, when published here, is licensed under Apache-2.0. Documentation, prot
 
 ## Author
 
-Nirmata is independent research by [Tabata Jahoda](https://github.com/thabatarj8-stack). Connect on [LinkedIn](https://www.linkedin.com/in/tabata-j-226b6123/).
+Nirmata is independent research by [Tabata Jahoda](https://github.com/thabatarj8-stack), [ORCID 0009-0007-1104-9204](https://orcid.org/0009-0007-1104-9204). Connect on [LinkedIn](https://www.linkedin.com/in/tabata-j-226b6123/).

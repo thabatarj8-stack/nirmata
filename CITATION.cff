@@ -5,6 +5,7 @@ type: software
 authors:
   - family-names: Jahoda
     given-names: Tabata
+    orcid: "https://orcid.org/0009-0007-1104-9204"
 version: 0.1.0
 repository-code: "https://github.com/thabatarj8-stack/nirmata"
 url: "https://github.com/thabatarj8-stack/nirmata"

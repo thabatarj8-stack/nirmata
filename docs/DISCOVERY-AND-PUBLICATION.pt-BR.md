@@ -23,7 +23,7 @@
 - [x] Publicar uma fixture sintética e executável de integração com limites explícitos das afirmações.
 - [x] Adicionar verificações automatizadas da documentação e do pipeline de reprodutibilidade.
 - [ ] Fixar Nirmata e seu caso aplicado mais forte no perfil do GitHub.
-- [ ] Adicionar ORCID ao `CITATION.cff`, caso a autora possua um.
+- [x] Adicionar o ORCID da autora aos metadados de citação e do projeto.
 - [ ] Ativar integração GitHub–Zenodo e emitir uma release versionada com DOI.
 - [ ] Registrar futuros protocolos confirmatórios em serviço externo com timestamp antes da execução.
 - [ ] Publicar nota de método ou preprint ligado à versão com DOI.

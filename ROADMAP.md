@@ -16,7 +16,7 @@ The roadmap is ordered by evidentiary dependency, not by visibility. A DOI and a
 
 - [x] Publish a sanitized applied-case package without production artifacts.
 - [ ] Review every public artifact for secrets, identifiers, client material, and holdout leakage.
-- [ ] Add ORCID to citation metadata if available.
+- [x] Add ORCID to citation and project metadata.
 - [ ] Freeze a `v0.1.0` release candidate and record artifact hashes.
 - [ ] Connect GitHub to Zenodo and archive the release with a DOI.
 
@@ -53,7 +53,7 @@ O roadmap segue a dependência entre evidências, não a visibilidade. Um DOI e 
 
 - [x] Publicar um pacote sanitizado de caso aplicado sem artefatos de produção.
 - [ ] Revisar todos os artefatos públicos em busca de segredos, identificadores, material de clientes e vazamento de holdout.
-- [ ] Adicionar ORCID aos metadados de citação, caso exista.
+- [x] Adicionar ORCID aos metadados de citação e do projeto.
 - [ ] Congelar uma candidata `v0.1.0` e registrar hashes dos artefatos.
 - [ ] Conectar GitHub ao Zenodo e arquivar a release com DOI.
 

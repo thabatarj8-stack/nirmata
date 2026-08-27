@@ -22,10 +22,14 @@
   "author": [
     {
       "@type": "Person",
+      "@id": "https://orcid.org/0009-0007-1104-9204",
       "givenName": "Tabata",
       "familyName": "Jahoda",
       "url": "https://github.com/thabatarj8-stack",
-      "sameAs": "https://www.linkedin.com/in/tabata-j-226b6123/"
+      "sameAs": [
+        "https://orcid.org/0009-0007-1104-9204",
+        "https://www.linkedin.com/in/tabata-j-226b6123/"
+      ]
     }
   ]
 }

@@ -84,4 +84,4 @@ Software, quando publicado aqui, usa Apache-2.0. Documentação, protocolos, tax
 
 ## Autoria
 
-Nirmata é uma pesquisa independente de [Tabata Jahoda](https://github.com/thabatarj8-stack). Conecte-se pelo [LinkedIn](https://www.linkedin.com/in/tabata-j-226b6123/).
+Nirmata é uma pesquisa independente de [Tabata Jahoda](https://github.com/thabatarj8-stack), [ORCID 0009-0007-1104-9204](https://orcid.org/0009-0007-1104-9204). Conecte-se pelo [LinkedIn](https://www.linkedin.com/in/tabata-j-226b6123/).
