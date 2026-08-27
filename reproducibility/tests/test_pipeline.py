@@ -18,7 +18,7 @@ from validate import validate_package, validate_trace  # noqa: E402
 
 class ReproducibilityPipelineTests(unittest.TestCase):
     def test_calibration_package_is_valid(self) -> None:
-        self.assertEqual(validate_package(), {"traces": 6, "labels": 6})
+        self.assertEqual(validate_package(), {"traces": 6, "labels": 6, "applied": 1})
 
     def test_end_to_end_fixture_preserves_expected_distinctions(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

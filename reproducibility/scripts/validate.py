@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from common import (
+    APPLIED_DATA_PATH,
     GROUND_TRUTH_PATH,
     PROCESS_CLASSES,
     TRACES_PATH,
@@ -93,7 +94,15 @@ def validate_package(traces_path: Path = TRACES_PATH, truth_path: Path = GROUND_
         require(isinstance(record.get("trajectory_unsafe"), bool), f"{trace_id}: trajectory_unsafe must be boolean")
         require(record["trajectory_unsafe"] == (process_class in UNSAFE_PROCESS_CLASSES), f"{trace_id}: unsafe flag conflicts with process class")
 
-    return {"traces": len(traces), "labels": len(truth)}
+    applied = 0
+    if APPLIED_DATA_PATH.exists():
+        for path in sorted(APPLIED_DATA_PATH.glob("*.json")):
+            record = json.loads(path.read_text(encoding="utf-8"))
+            require(isinstance(record, dict), f"{path}: applied trace must be an object")
+            validate_trace(record)
+            applied += 1
+
+    return {"traces": len(traces), "labels": len(truth), "applied": applied}
 
 
 def main() -> int:

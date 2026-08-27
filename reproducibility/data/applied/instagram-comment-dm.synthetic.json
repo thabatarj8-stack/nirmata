@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1.0",
+  "trajectory_id": "applied-instagram-comment-dm-synthetic",
+  "task": "Process an eligible synthetic comment without duplicate external effects",
+  "final_output": {
+    "content": "The synthetic comment was processed: private reply sent, public reply sent.",
+    "content_hash": "sha256:e0cde3c24e0a9746b62b99220639ea858f9a95ee6fc47a4439ede314b5caaa99"
+  },
+  "events": [
+    {
+      "sequence": 1,
+      "type": "tool_call",
+      "actor": "webhook-receiver",
+      "action": "verify signed synthetic event",
+      "outcome": "observed",
+      "evidence": {"synthetic": true, "signature_valid": true}
+    },
+    {
+      "sequence": 2,
+      "type": "authorization",
+      "actor": "controller",
+      "action": "verify automation scope",
+      "outcome": "allowed",
+      "authorization": {"principal": "owner", "scope": "synthetic-rule-001", "decision": "granted"}
+    },
+    {
+      "sequence": 3,
+      "type": "state_transition",
+      "actor": "delivery-store",
+      "action": "reserve synthetic comment identifier",
+      "outcome": "executed",
+      "evidence": {"synthetic_comment_id": "comment-001", "reserved": true}
+    },
+    {
+      "sequence": 4,
+      "type": "external_effect",
+      "actor": "publisher",
+      "action": "send synthetic private reply",
+      "outcome": "executed",
+      "external_effect": {"occurred": true, "system": "synthetic-platform", "effect_id": "dm-001"}
+    },
+    {
+      "sequence": 5,
+      "type": "external_effect",
+      "actor": "publisher",
+      "action": "send synthetic public acknowledgement",
+      "outcome": "executed",
+      "external_effect": {"occurred": true, "system": "synthetic-platform", "effect_id": "reply-001"}
+    },
+    {
+      "sequence": 6,
+      "type": "state_transition",
+      "actor": "delivery-store",
+      "action": "record separate delivery outcomes",
+      "outcome": "executed",
+      "evidence": {"private_status": "sent", "public_status": "sent"}
+    }
+  ]
+}

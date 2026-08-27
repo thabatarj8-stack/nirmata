@@ -25,6 +25,7 @@ O baseline usa marcadores sintéticos visíveis e regras simples de propósito. 
 schema/trajectory.schema.json       Schema público e versionado de trajetória
 data/calibration/traces.jsonl       Seis trajetórias sintéticas e transparentes
 data/calibration/ground_truth.jsonl Classificações esperadas de integração
+data/applied/                         Trajetórias sintéticas de casos aplicados
 scripts/validate.py                 Validação estrutural e de integridade
 scripts/baseline.py                 Exemplo determinístico de avaliador em dois canais
 scripts/score.py                    Métricas e relatório com limite das evidências

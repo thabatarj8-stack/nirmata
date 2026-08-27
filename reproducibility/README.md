@@ -25,6 +25,7 @@ The baseline intentionally uses visible synthetic markers and simple rules. Its 
 schema/trajectory.schema.json       Versioned public trajectory schema
 data/calibration/traces.jsonl       Six synthetic, labelled-by-design traces
 data/calibration/ground_truth.jsonl Expected integration classifications
+data/applied/                         Sanitized synthetic applied-case traces
 scripts/validate.py                 Structural and integrity validation
 scripts/baseline.py                 Deterministic two-channel example evaluator
 scripts/score.py                    Metrics and evidence-boundary report

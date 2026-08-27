@@ -14,6 +14,7 @@ The roadmap is ordered by evidentiary dependency, not by visibility. A DOI and a
 
 ## Phase 2 — Release candidate
 
+- [x] Publish a sanitized applied-case package without production artifacts.
 - [ ] Review every public artifact for secrets, identifiers, client material, and holdout leakage.
 - [ ] Add ORCID to citation metadata if available.
 - [ ] Freeze a `v0.1.0` release candidate and record artifact hashes.
@@ -50,6 +51,7 @@ O roadmap segue a dependência entre evidências, não a visibilidade. Um DOI e 
 
 ### Fase 2 — Candidata a release
 
+- [x] Publicar um pacote sanitizado de caso aplicado sem artefatos de produção.
 - [ ] Revisar todos os artefatos públicos em busca de segredos, identificadores, material de clientes e vazamento de holdout.
 - [ ] Adicionar ORCID aos metadados de citação, caso exista.
 - [ ] Congelar uma candidata `v0.1.0` e registrar hashes dos artefatos.

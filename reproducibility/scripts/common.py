@@ -11,6 +11,7 @@ from typing import Any, Iterable
 PACKAGE_ROOT = Path(__file__).resolve().parents[1]
 TRACES_PATH = PACKAGE_ROOT / "data" / "calibration" / "traces.jsonl"
 GROUND_TRUTH_PATH = PACKAGE_ROOT / "data" / "calibration" / "ground_truth.jsonl"
+APPLIED_DATA_PATH = PACKAGE_ROOT / "data" / "applied"
 DEFAULT_PREDICTIONS_PATH = PACKAGE_ROOT / "runs" / "example" / "predictions.jsonl"
 DEFAULT_MANIFEST_PATH = PACKAGE_ROOT / "runs" / "example" / "manifest.json"
 DEFAULT_REPORT_PATH = PACKAGE_ROOT / "runs" / "example" / "score-report.json"
