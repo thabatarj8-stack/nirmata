@@ -14,6 +14,7 @@ Quando um agente usa ferramentas, altera estados ou atua em um sistema externo, 
 |---|---|
 | Entender a ideia em cinco minutos | [Por que a resposta final não basta](articles/pt-BR/por-que-a-resposta-final-nao-basta.md) |
 | Inspecionar o desenho de avaliação | [Metodologia](docs/METHODOLOGY.pt-BR.md) |
+| Inspecionar os contratos operacionais versionados | [Padrão Experimental v0.1](docs/experimental-standard/v0.1/README.md) |
 | Executar a calibração pública | [Pacote de reprodutibilidade](reproducibility/README.pt-BR.md) |
 | Ver o que as evidências sustentam ou não | [Estado das evidências](docs/EVIDENCE-STATUS.pt-BR.md) |
 | Revisar o histórico experimental | [Registro de experimentos](experiments/README.md) |
@@ -71,8 +72,8 @@ O Nirmata é um programa piloto de pesquisa e laboratório de casos. Ainda não 
 ```text
 articles/       Ensaios acessíveis em português e inglês
 case-studies/   Casos operacionais aplicados
-docs/           Método, evidências, literatura e agenda
-experiments/    Registro e estado dos experimentos
+docs/           Método, evidências, literatura, agenda e padrão experimental
+experiments/    Registro, protocolos, schemas e estado dos experimentos
 reproducibility/ Schema, trajetórias sintéticas, avaliador, pontuação e testes
 ```
 

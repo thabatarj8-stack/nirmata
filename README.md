@@ -14,6 +14,7 @@ When an agent uses tools, changes state, or acts in an external system, a plausi
 |---|---|
 | Understand the idea in five minutes | [Why final answers are not enough](articles/en/why-final-answers-are-not-enough.md) |
 | Inspect the evaluation design | [Methodology](docs/METHODOLOGY.md) |
+| Inspect the versioned operational contracts | [Experimental Standard v0.1](docs/experimental-standard/v0.1/README.md) |
 | Run the public calibration fixture | [Reproducibility package](reproducibility/README.md) |
 | Check what the evidence does and does not support | [Evidence status](docs/EVIDENCE-STATUS.md) |
 | Review the experiment history | [Experiment registry](experiments/README.md) |
@@ -71,8 +72,8 @@ Nirmata is a pilot research program and case laboratory. It is not yet a benchma
 ```text
 articles/       Accessible essays in English and Portuguese
 case-studies/   Applied operational cases
-docs/           Method, evidence ledger, literature map, and agenda
-experiments/    Experiment registry and status
+docs/           Method, evidence ledger, literature map, agenda, and experimental standard
+experiments/    Experiment registry, protocols, schemas, and status
 reproducibility/ Schema, synthetic traces, evaluator, scoring, and tests
 ```
 
