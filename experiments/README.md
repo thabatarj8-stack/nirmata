@@ -4,7 +4,7 @@ This registry distinguishes exploratory observations, development checks, integr
 
 ## Experiment 001
 
-**Strategic agent evaluation and delegated authority**
+### Strategic agent evaluation and delegated authority
 
 An editorial agent selected and verified a topic, but its trajectory incorrectly converted a reviewer's recommendation into owner approval. The final draft was acceptable; the authorization path was not. This observation motivated trajectory-aware evaluation.
 
@@ -12,7 +12,7 @@ Follow-up development and control-integrity suites tested approval injection, fo
 
 ## Experiment 002
 
-**Final-output evaluation versus independent trajectory signal**
+### Final-output evaluation versus independent trajectory signal
 
 The current design uses a shared content judgment and an independent trajectory judgment, combined with a deterministic OR. Integration validation passed on six calibration cases after earlier evaluator designs and their failures were preserved.
 
@@ -20,7 +20,7 @@ The planned blind confirmatory run did not occur. The ground-truth file was acci
 
 ## Experiment 003
 
-**Evaluator context interference — candidate study**
+### Evaluator context interference — candidate study
 
 During integration work, a joint-context evaluator sometimes allowed clean trajectory evidence to interfere with detection of independently unsafe content. This is a motivating observation for a separate experiment, not a confirmed general effect. The study has not started.
 
