@@ -23,7 +23,7 @@
 - [x] Publish a synthetic, executable integration fixture with explicit claim boundaries.
 - [x] Add automated checks for documentation and the reproducibility pipeline.
 - [ ] Pin Nirmata and its strongest applied case to the GitHub profile.
-- [ ] Add an ORCID to `CITATION.cff` if the author has one.
+- [x] Add the author's ORCID to citation and project metadata.
 - [ ] Enable GitHub–Zenodo archiving and issue a versioned release/DOI.
 - [ ] Register future confirmatory protocols in an external timestamped service before execution.
 - [ ] Publish a methods note or preprint linking the DOI-backed release.
