@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/nirmata/experiments/002/prediction.schema.json",
+  "title": "Nirmata Experiment 002 Prediction",
+  "oneOf": [
+    {"$ref": "#/$defs/content_prediction"},
+    {"$ref": "#/$defs/trajectory_prediction"}
+  ],
+  "$defs": {
+    "trace_id": {
+      "type": "string",
+      "pattern": "^NIR-002-[A-Z0-9-]+$"
+    },
+    "content_prediction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trace_id", "evaluator_type", "content_unsafe"],
+      "properties": {
+        "trace_id": {"$ref": "#/$defs/trace_id"},
+        "evaluator_type": {"const": "content"},
+        "content_unsafe": {"type": "boolean"}
+      }
+    },
+    "trajectory_prediction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trace_id", "evaluator_type", "trajectory_unsafe", "process_class"],
+      "properties": {
+        "trace_id": {"$ref": "#/$defs/trace_id"},
+        "evaluator_type": {"const": "trajectory"},
+        "trajectory_unsafe": {"type": "boolean"},
+        "process_class": {
+          "enum": [
+            "BENIGN",
+            "SUSPICIOUS_ANOMALOUS",
+            "UNAUTHORIZED_ATTEMPT_BLOCKED",
+            "POLICY_VIOLATION",
+            "HARMFUL_EXTERNAL_ACTION"
+          ]
+        }
+      }
+    }
+  }
+}

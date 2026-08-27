@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/nirmata/experiments/002/run-manifest.schema.json",
+  "title": "Nirmata Experiment 002 Run Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema","schema_version","run_id","experiment_id","protocol_version","run_type","status","protocol","dataset","evaluators","aggregation","predictions","ground_truth_custody","protocol_deviations","evidence"],
+  "properties": {
+    "schema": {"const": "nirmata-run-manifest"},
+    "schema_version": {"const": "0.1"},
+    "run_id": {"type": "string", "minLength": 1},
+    "experiment_id": {"const": "002"},
+    "protocol_version": {"type": "string", "minLength": 1},
+    "run_type": {"enum": ["exploratory","development","integration","confirmatory"]},
+    "status": {"enum": ["planned","running","completed","aborted","invalidated"]},
+    "started_at": {"type": ["string","null"], "format": "date-time"},
+    "completed_at": {"type": ["string","null"], "format": "date-time"},
+    "protocol": {"$ref": "#/$defs/artifact_ref"},
+    "dataset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dataset_id","version","trace_count","trace_file","trace_sha256","ground_truth_sha256"],
+      "properties": {
+        "dataset_id": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1},
+        "trace_count": {"type": "integer", "minimum": 1},
+        "trace_file": {"type": "string", "minLength": 1},
+        "trace_sha256": {"$ref": "#/$defs/nullable_sha256"},
+        "ground_truth_file": {"type": ["string","null"]},
+        "ground_truth_sha256": {"type": ["string","null"]}
+      }
+    },
+    "evaluators": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content","trajectory"],
+      "properties": {
+        "content": {"$ref": "#/$defs/evaluator"},
+        "trajectory": {"$ref": "#/$defs/evaluator"}
+      }
+    },
+    "aggregation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version","final_only","trajectory_aware"],
+      "properties": {
+        "version": {"type": "string", "minLength": 1},
+        "final_only": {"const": "content_unsafe"},
+        "trajectory_aware": {"const": "content_unsafe OR trajectory_unsafe"}
+      }
+    },
+    "predictions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content_file","trajectory_file","content_sha256","trajectory_sha256","persisted_at","immutable_before_ground_truth"],
+      "properties": {
+        "content_file": {"type": ["string","null"]},
+        "trajectory_file": {"type": ["string","null"]},
+        "content_sha256": {"$ref": "#/$defs/nullable_sha256"},
+        "trajectory_sha256": {"$ref": "#/$defs/nullable_sha256"},
+        "persisted_at": {"type": ["string","null"], "format": "date-time"},
+        "immutable_before_ground_truth": {"type": ["boolean","null"]}
+      }
+    },
+    "ground_truth_custody": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["withheld_during_evaluation","accessible_to_evaluator","predictions_persisted_before_reveal"],
+      "properties": {
+        "withheld_during_evaluation": {"type": "boolean"},
+        "accessible_to_evaluator": {"type": "boolean"},
+        "revealed_at": {"type": ["string","null"], "format": "date-time"},
+        "predictions_persisted_before_reveal": {"type": ["boolean","null"]}
+      }
+    },
+    "authorization_context": {"type": "object"},
+    "environment": {"type": "object"},
+    "protocol_deviations": {"type": "array", "items": {"$ref": "#/$defs/deviation"}},
+    "abort": {"type": "object"},
+    "scoring": {"type": "object"},
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["intended_class","final_class","valid"],
+      "properties": {
+        "intended_class": {"enum": ["EXPLORATORY","DEVELOPMENT","INTEGRATION","CONFIRMATORY"]},
+        "final_class": {"type": ["string","null"], "enum": ["EXPLORATORY","DEVELOPMENT","INTEGRATION","CONFIRMATORY","INVALIDATED",null]},
+        "valid": {"type": ["boolean","null"]},
+        "reason": {"type": ["string","null"]}
+      }
+    }
+  },
+  "$defs": {
+    "nullable_sha256": {
+      "anyOf": [
+        {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        {"type": "null"}
+      ]
+    },
+    "artifact_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version","file","sha256"],
+      "properties": {
+        "version": {"type": "string", "minLength": 1},
+        "file": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/nullable_sha256"}
+      }
+    },
+    "evaluator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evaluator_id","provider","model","prompt_file","prompt_sha256"],
+      "properties": {
+        "evaluator_id": {"type": "string", "minLength": 1},
+        "provider": {"type": ["string","null"]},
+        "model": {"type": ["string","null"]},
+        "model_version": {"type": ["string","null"]},
+        "exact_weights_available": {"type": ["boolean","null"]},
+        "temperature": {"type": ["number","null"]},
+        "prompt_file": {"type": "string", "minLength": 1},
+        "prompt_sha256": {"$ref": "#/$defs/nullable_sha256"}
+      }
+    },
+    "deviation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["deviation_id","description","severity"],
+      "properties": {
+        "deviation_id": {"type": "string", "minLength": 1},
+        "timestamp": {"type": ["string","null"], "format": "date-time"},
+        "description": {"type": "string", "minLength": 1},
+        "severity": {"enum": ["non_material","material","invalidating"]}
+      }
+    }
+  }
+}
