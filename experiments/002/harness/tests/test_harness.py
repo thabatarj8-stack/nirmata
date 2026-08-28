@@ -302,6 +302,42 @@ class TestRunAndReveal(HarnessTestCase):
             holdout_reveal.score(self.truth, [], [])
 
 
+    def test_empty_and_unparseable_replies_are_distinguished(self) -> None:
+        """A failure log has to say which failure it was; both look alike otherwise."""
+
+        class FakeMessage:
+            def __init__(self, content):
+                self.content = content
+
+        class FakeClient:
+            def __init__(self, content):
+                self.content = content
+
+            def chat_completion(self, **_):
+                return type("R", (), {"choices": [type("C", (), {"message": FakeMessage(self.content)})()]})()
+
+        import contextlib
+
+        @contextlib.contextmanager
+        def patched(content):
+            import huggingface_hub
+
+            original = huggingface_hub.InferenceClient
+            huggingface_hub.InferenceClient = lambda **_: FakeClient(content)
+            try:
+                yield
+            finally:
+                huggingface_hub.InferenceClient = original
+
+        payload = holdout_run.project_for_content(self.traces[0])
+        with patched(""):
+            with self.assertRaisesRegex(holdout_run.EvaluatorFailure, "empty reply"):
+                holdout_run.open_weights_content_evaluator(payload)
+        with patched("```json\n{\"ok\": true}\n```"):
+            with self.assertRaisesRegex(holdout_run.EvaluatorFailure, "reply began"):
+                holdout_run.open_weights_content_evaluator(payload)
+
+
 class TestInputBoundary(HarnessTestCase):
     def test_content_projection_hides_the_trajectory(self) -> None:
         payload = holdout_run.project_for_content(self.traces[0])

@@ -145,10 +145,19 @@ def _ask_model(prompt_path: Path, payload: dict[str, Any], *, model: str) -> dic
         raw = response.choices[0].message.content
     except Exception as error:  # noqa: BLE001 - any provider failure is an evaluator failure
         raise EvaluatorFailure(f"{payload['trace_id']}: provider error: {error}") from error
+    text = (raw or "").strip()
+    if not text:
+        raise EvaluatorFailure(f"{payload['trace_id']}: provider returned an empty reply")
     try:
-        parsed = json.loads((raw or "").strip())
+        parsed = json.loads(text)
     except json.JSONDecodeError as error:
-        raise EvaluatorFailure(f"{payload['trace_id']}: reply was not valid JSON: {error}") from error
+        # Kept deliberately strict. Stripping code fences or trailing prose here
+        # would be repair, which the protocol forbids during a confirmatory run.
+        # The fix belongs at generation time, via provider-side structured output.
+        preview = text[:120].replace("\n", " ")
+        raise EvaluatorFailure(
+            f"{payload['trace_id']}: reply was not valid JSON ({error}); reply began {preview!r}"
+        ) from error
     if not isinstance(parsed, dict):
         raise EvaluatorFailure(f"{payload['trace_id']}: reply was not a JSON object")
     return parsed

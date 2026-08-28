@@ -47,7 +47,10 @@ FROZEN_COMPOSITION = {
     "HARMFUL_EXTERNAL_ACTION": 2,
 }
 GROUND_TRUTH_FIELDS = {"content_unsafe", "trajectory_class", "trajectory_unsafe"}
-H2_TRACE_ID = re.compile(r"^NIR-002-H2-\d{3}$")
+def trace_id_pattern(suite: str) -> re.Pattern[str]:
+    """Suite label keeps confirmatory material distinguishable from other suites."""
+    require(re.fullmatch(r"[A-Z][A-Z0-9]{1,7}", suite) is not None, f"invalid suite label: {suite!r}")
+    return re.compile(rf"^NIR-002-{suite}-\d{{3}}$")
 
 
 def validator(name: str) -> Draft202012Validator:
@@ -162,7 +165,9 @@ def _walk_keys(value: Any) -> list[str]:
     return found
 
 
-def check_structural_isolation(traces: list[dict[str, Any]], truth: list[dict[str, Any]]) -> None:
+def check_structural_isolation(
+    traces: list[dict[str, Any]], truth: list[dict[str, Any]], *, suite: str = "H2"
+) -> None:
     trace_validator = validator("trace.schema.json")
     truth_validator = validator("ground-truth.schema.json")
 
@@ -181,8 +186,8 @@ def check_structural_isolation(traces: list[dict[str, Any]], truth: list[dict[st
             f"{errors[0].message if errors else ''}",
         )
         require(
-            H2_TRACE_ID.fullmatch(trace_id) is not None,
-            f"{trace_id}: H2 trace IDs must match NIR-002-H2-NNN",
+            trace_id_pattern(suite).fullmatch(trace_id) is not None,
+            f"{trace_id}: {suite} trace IDs must match NIR-002-{suite}-NNN",
         )
         leaked = GROUND_TRUTH_FIELDS & set(_walk_keys(trace))
         require(not leaked, f"{trace_id}: ground-truth field(s) present in trace: {sorted(leaked)}")
@@ -234,7 +239,9 @@ def check_composition(truth: list[dict[str, Any]]) -> dict[str, int]:
     }
 
 
-def preflight(traces_path: Path, key_path: Path, *, run_id: str, seal_path: Path) -> dict[str, Any]:
+def preflight(
+    traces_path: Path, key_path: Path, *, run_id: str, seal_path: Path, suite: str = "H2"
+) -> dict[str, Any]:
     assert_outside_repo(traces_path, "holdout traces")
     assert_outside_repo(key_path, "holdout key")
     require(
@@ -244,7 +251,7 @@ def preflight(traces_path: Path, key_path: Path, *, run_id: str, seal_path: Path
 
     traces = load_jsonl(traces_path)
     truth = load_jsonl(key_path)
-    check_structural_isolation(traces, truth)
+    check_structural_isolation(traces, truth, suite=suite)
     summary = check_composition(truth)
 
     truth_by_id = {record["trace_id"]: record for record in truth}
@@ -261,7 +268,7 @@ def preflight(traces_path: Path, key_path: Path, *, run_id: str, seal_path: Path
         notes="H2 frozen after preflight; key held separately and never entered evaluator context",
     )
     write_seal(seal_path, record)
-    return {"status": "frozen", "run_id": run_id, "seal": str(seal_path), **summary}
+    return {"status": "frozen", "run_id": run_id, "suite": suite, "seal": str(seal_path), **summary}
 
 
 def main() -> int:
@@ -270,9 +277,12 @@ def main() -> int:
     parser.add_argument("--key", type=Path, required=True, help="sealed ground truth (separate directory)")
     parser.add_argument("--run-id", required=True, help="e.g. NIR-002-H2-RUN-1")
     parser.add_argument("--seal", type=Path, required=True, help="where to write the freeze seal")
+    parser.add_argument("--suite", default="H2", help="suite label in the trace IDs (default H2)")
     args = parser.parse_args()
     try:
-        result = preflight(args.traces, args.key, run_id=args.run_id, seal_path=args.seal)
+        result = preflight(
+            args.traces, args.key, run_id=args.run_id, seal_path=args.seal, suite=args.suite
+        )
     except (OSError, ValueError, NotImplementedError, json.JSONDecodeError) as error:
         print(f"preflight failed: {error}", file=sys.stderr)
         return 1
