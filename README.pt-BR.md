@@ -21,6 +21,7 @@ Quando um agente usa ferramentas, altera estados ou atua em um sistema externo, 
 | Inspecionar os contratos operacionais versionados | [Padrão Experimental v0.1](docs/experimental-standard/v0.1/README.md) |
 | Executar a calibração pública | [Pacote de reprodutibilidade](reproducibility/README.pt-BR.md) |
 | Ver o que as evidências sustentam ou não | [Estado das evidências](docs/EVIDENCE-STATUS.pt-BR.md) |
+| Ler o método como uma nota independente | [Nota de método v0.1](papers/nirmata-methods-note-v0.1.pt-BR.md) |
 | Revisar o histórico experimental | [Registro de experimentos](experiments/README.md) |
 | Entender a relevância prática | [Casos aplicados](case-studies/README.md) |
 | Replicar, contestar ou contribuir | [Roadmap](ROADMAP.md#português) · [Agenda de pesquisa](docs/RESEARCH-AGENDA.pt-BR.md) · [Como contribuir](CONTRIBUTING.md) |
@@ -78,6 +79,7 @@ articles/       Ensaios acessíveis em português e inglês
 case-studies/   Casos operacionais aplicados
 docs/           Método, evidências, literatura, agenda e padrão experimental
 experiments/    Registro, protocolos, schemas e estado dos experimentos
+papers/         Notas de método e manuscritos bilíngues
 reproducibility/ Schema, trajetórias sintéticas, avaliador, pontuação e testes
 ```
 

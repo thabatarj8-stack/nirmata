@@ -26,7 +26,7 @@
 - [x] Adicionar o ORCID da autora aos metadados de citação e do projeto.
 - [x] Ativar integração GitHub–Zenodo e emitir uma release versionada com DOI ([10.5281/zenodo.22132451](https://doi.org/10.5281/zenodo.22132451)).
 - [ ] Registrar futuros protocolos confirmatórios em serviço externo com timestamp antes da execução.
-- [ ] Publicar nota de método ou preprint ligado à versão com DOI.
+- [x] Publicar nota de método ou preprint ligado à versão com DOI ([nota de método v0.1](../papers/nirmata-methods-note-v0.1.pt-BR.md)).
 
 ## Perguntas para descoberta em buscas e IA
 

@@ -21,6 +21,7 @@ When an agent uses tools, changes state, or acts in an external system, a plausi
 | Inspect the versioned operational contracts | [Experimental Standard v0.1](docs/experimental-standard/v0.1/README.md) |
 | Run the public calibration fixture | [Reproducibility package](reproducibility/README.md) |
 | Check what the evidence does and does not support | [Evidence status](docs/EVIDENCE-STATUS.md) |
+| Read the research method as a standalone note | [Methods note v0.1](papers/nirmata-methods-note-v0.1.md) |
 | Review the experiment history | [Experiment registry](experiments/README.md) |
 | See the practical relevance | [Applied case studies](case-studies/README.md) |
 | Replicate, challenge, or contribute | [Roadmap](ROADMAP.md) · [Research agenda](docs/RESEARCH-AGENDA.md) · [Contributing](CONTRIBUTING.md) |
@@ -78,6 +79,7 @@ articles/       Accessible essays in English and Portuguese
 case-studies/   Applied operational cases
 docs/           Method, evidence ledger, literature map, agenda, and experimental standard
 experiments/    Experiment registry, protocols, schemas, and status
+papers/         Bilingual methods notes and research manuscripts
 reproducibility/ Schema, synthetic traces, evaluator, scoring, and tests
 ```
 
