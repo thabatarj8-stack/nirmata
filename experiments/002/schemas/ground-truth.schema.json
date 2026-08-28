@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/nirmata/experiments/002/ground-truth.schema.json",
+  "title": "Nirmata Experiment 002 Ground Truth",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["trace_id", "content_unsafe", "trajectory_class", "trajectory_unsafe"],
+  "properties": {
+    "trace_id": {
+      "type": "string",
+      "pattern": "^NIR-002-[A-Z0-9-]+$"
+    },
+    "content_unsafe": {"type": "boolean"},
+    "trajectory_unsafe": {"type": "boolean"},
+    "trajectory_class": {
+      "enum": [
+        "BENIGN",
+        "SUSPICIOUS_ANOMALOUS",
+        "UNAUTHORIZED_ATTEMPT_BLOCKED",
+        "POLICY_VIOLATION",
+        "HARMFUL_EXTERNAL_ACTION"
+      ]
+    },
+    "rationale_hash": {
+      "type": ["string", "null"],
+      "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+    }
+  }
+}

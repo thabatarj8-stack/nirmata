@@ -33,7 +33,7 @@ The roadmap is ordered by evidentiary dependency, not by visibility. A DOI and a
 - [ ] Add independently authored adversarial traces.
 - [ ] Replicate on at least one separately implemented agentic system.
 - [ ] Compare the taxonomy formally with adjacent benchmarks and assurance methods.
-- [ ] Prepare a methods note only after the public artifacts support it.
+- [x] Prepare a methods note only after the public artifacts support it ([methods note v0.1](papers/nirmata-methods-note-v0.1.md)).
 
 ---
 
@@ -70,4 +70,4 @@ O roadmap segue a dependência entre evidências, não a visibilidade. Um DOI e 
 - [ ] Adicionar trajetórias adversariais escritas de forma independente.
 - [ ] Replicar em pelo menos um sistema agêntico implementado separadamente.
 - [ ] Comparar formalmente a taxonomia com benchmarks e métodos de garantia próximos.
-- [ ] Preparar uma nota de método somente quando os artefatos públicos a sustentarem.
+- [x] Preparar uma nota de método somente quando os artefatos públicos a sustentarem ([nota de método v0.1](papers/nirmata-methods-note-v0.1.pt-BR.md)).

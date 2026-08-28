@@ -26,7 +26,7 @@
 - [x] Add the author's ORCID to citation and project metadata.
 - [x] Enable GitHub–Zenodo archiving and issue a versioned release/DOI ([10.5281/zenodo.22132451](https://doi.org/10.5281/zenodo.22132451)).
 - [ ] Register future confirmatory protocols in an external timestamped service before execution.
-- [ ] Publish a methods note or preprint linking the DOI-backed release.
+- [x] Publish a methods note or preprint linking the DOI-backed release ([methods note v0.1](../papers/nirmata-methods-note-v0.1.md)).
 
 ## Search and AI-discovery questions
 
