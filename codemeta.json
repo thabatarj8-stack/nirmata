@@ -9,6 +9,10 @@
   "dateModified": "2026-08-27",
   "codeRepository": "https://github.com/thabatarj8-stack/nirmata",
   "issueTracker": "https://github.com/thabatarj8-stack/nirmata/issues",
+  "license": [
+    "https://spdx.org/licenses/Apache-2.0",
+    "https://spdx.org/licenses/CC-BY-4.0"
+  ],
   "programmingLanguage": ["Python", "Markdown", "JSON"],
   "keywords": [
     "AI agents",
