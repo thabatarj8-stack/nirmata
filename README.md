@@ -1,92 +1,136 @@
 # Nirmata
 
-**Language:** English · [Português (Brasil)](README.pt-BR.md)
+Nirmata is an open research framework for auditing AI agents by what they actually do, not only by what they say.
 
-**Nirmata is an independent research program that evaluates AI agents from what they do—not only from what they say.**
-
-**Current version:** `v0.1.0` · [Release contents and verification](releases/v0.1.0/README.md)
+**Current version:** `v0.1.0` · [Release contents](releases/v0.1.0/README.md) · [Brazilian Portuguese](README.pt-BR.md)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22132451.svg)](https://doi.org/10.5281/zenodo.22132451)
+[![Code license: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSES/Apache-2.0.txt)
+[![Docs license: CC BY 4.0](https://img.shields.io/badge/docs-CC%20BY%204.0-lightgrey.svg)](LICENSES/CC-BY-4.0.txt)
 
-When an agent uses tools, changes state, or acts in an external system, a plausible final answer is incomplete evidence. The execution path may contain an authorization error, a blocked attack, a broken control, or an effect that the answer never mentions. Nirmata makes that path inspectable and keeps failed evaluations in the research record.
+> **Evidence status of the v0.1.0 package:** early-stage pilot. Development and integration checks have passed. No blind confirmatory result is claimed for that package. The first planned Experiment 002 holdout was invalidated before scoring because its answer key entered the evaluator context. [Evidence ledger](docs/EVIDENCE-STATUS.md).
 
-> **Evidence status:** early-stage pilot. Development and integration checks have passed, but no blind confirmatory result is claimed. The first planned holdout was invalidated before scoring because its answer key entered the evaluator context. [See the evidence ledger.](docs/EVIDENCE-STATUS.md)
+## Why it matters
 
-## Start here
+When an agent uses tools, changes state, or acts in an external system, a plausible final answer is incomplete evidence. The execution path may contain an authorization error, a blocked attack, a broken control, or an effect that the answer never mentions.
 
-| If you want to... | Read... |
-|---|---|
-| Understand the idea in five minutes | [Why final answers are not enough](articles/en/why-final-answers-are-not-enough.md) |
-| Inspect the evaluation design | [Methodology](docs/METHODOLOGY.md) |
-| Inspect the versioned operational contracts | [Experimental Standard v0.1](docs/experimental-standard/v0.1/README.md) |
-| Run the public calibration fixture | [Reproducibility package](reproducibility/README.md) |
-| Check what the evidence does and does not support | [Evidence status](docs/EVIDENCE-STATUS.md) |
-| Review the experiment history | [Experiment registry](experiments/README.md) |
-| See the practical relevance | [Applied case studies](case-studies/README.md) |
-| Replicate, challenge, or contribute | [Roadmap](ROADMAP.md) · [Research agenda](docs/RESEARCH-AGENDA.md) · [Contributing](CONTRIBUTING.md) |
+Nirmata keeps those facts distinct:
 
-## The evaluation model
+- A recommendation, reviewer opinion, queue state, or earlier approval is not owner authorization. Authorization is recorded separately from the requested action. See [Approval is not authorization](articles/en/approval-is-not-authorization.md) and the [trace schema](docs/experimental-standard/v0.1/TRACE-SCHEMA.md).
+- An attempt is not an effect. A blocked unauthorized request (`UNAUTHORIZED_ATTEMPT_BLOCKED`) is not the same event as an executed policy violation or a harmful external effect. See [Methodology](docs/METHODOLOGY.md).
+- Two evaluators stay independent. A **content evaluator** sees only the final output. A **trajectory evaluator** sees only process evidence. A deterministic rule combines them: `unsafe = content_unsafe OR trajectory_unsafe`. A clean signal in one channel cannot erase an unsafe signal in the other. See [Experiment 002 protocol](experiments/002/protocol/protocol-v1.0.md).
 
-Nirmata separates two signals that are often mixed together:
+The public executable baseline in `reproducibility/` is a deterministic stand-in for that two-channel design. It uses visible synthetic markers. It checks plumbing. It is not a model score and not confirmatory evidence.
 
-1. A **content evaluator** judges only the final output.
-2. A **trajectory evaluator** judges raw process evidence such as tool calls, authorization events, state transitions, and external effects.
-3. A deterministic rule combines both judgments without allowing a clean signal to erase an unsafe one.
+Integrity in this repository is SHA-256 on the fields the published schemas actually define. The executable schema requires `final_output.content_hash`, and `reproducibility/scripts/validate.py` rejects a mismatch. The experimental standard also asks, where available, for hashes of inputs, outputs, approved content, and state before and after a transition. Run manifests record hashes of inputs and outputs. [Methodology](docs/METHODOLOGY.md) states the limit directly: tamper detection is conditional on execution still passing through a trusted verifier.
 
-```text
-Final-only:        unsafe = content_unsafe
-Trajectory-aware: unsafe = content_unsafe OR trajectory_unsafe
+## Four phases
+
+[ROADMAP.md](ROADMAP.md) orders the program by evidentiary dependency. These are the four phases as written there.
+
+### Phase 1 — Reproducibility foundation
+
+- [x] Publish a minimal trajectory schema.
+- [x] Publish synthetic calibration traces and expected classifications.
+- [x] Provide deterministic validation, evaluation, scoring, manifests, and tests.
+- [x] Run documentation and pipeline checks in continuous integration.
+- [ ] Invite external review of the schema and process taxonomy.
+
+### Phase 2 — Release candidate
+
+- [x] Publish a sanitized applied-case package without production artifacts.
+- [x] Review every public artifact for secrets, identifiers, client material, and holdout leakage ([audit](docs/PUBLICATION-AUDIT-2026-08-27.md)).
+- [x] Add ORCID to citation and project metadata.
+- [x] Freeze a `v0.1.0` release candidate and record artifact hashes ([release record](releases/v0.1.0/README.md)).
+- [x] Connect GitHub to Zenodo and archive the release with a DOI ([10.5281/zenodo.22132451](https://doi.org/10.5281/zenodo.22132451)).
+
+### Phase 3 — Fresh blind pilot
+
+- [ ] Pre-register the frozen protocol and primary metrics.
+- [ ] Assign independent custody of new holdout labels.
+- [ ] Persist and hash predictions before ground-truth release.
+- [ ] Score without changing prompts, rubrics, thresholds, or cases.
+- [ ] Publish positive, negative, partial, or invalidated outcomes.
+
+### Phase 4 — External validity
+
+- [ ] Add independently authored adversarial traces.
+- [ ] Replicate on at least one separately implemented agentic system.
+- [ ] Compare the taxonomy formally with adjacent benchmarks and assurance methods.
+- [ ] Prepare a methods note only after the public artifacts support it.
+
+## Quickstart
+
+The public calibration package uses the Python 3 standard library only. From a checkout of this repository:
+
+```bash
+python3 reproducibility/scripts/validate.py
+python3 reproducibility/scripts/baseline.py \
+  --output reproducibility/runs/example/predictions.jsonl \
+  --manifest reproducibility/runs/example/manifest.json
+python3 reproducibility/scripts/score.py \
+  --predictions reproducibility/runs/example/predictions.jsonl \
+  --report reproducibility/runs/example/score-report.json
+python3 -m unittest discover -s reproducibility/tests -v
+python3 scripts/check_local_links.py
 ```
 
-This is a research design under evaluation, not a claim that trajectory-aware evaluation is universally superior.
+`validate.py` exits 0 and prints `status: ok` with 6 calibration traces, 6 labels, and 1 applied trace. The score report's `claim_boundary` says the fixture is not model performance and not confirmatory evidence. Details: [reproducibility package](reproducibility/README.md).
 
-## Research program
+To check the frozen `v0.1.0` archive hashes, export that tag and run the checksum file from inside it. On current `main`, the same check does not apply: files changed after the tag when the DOI was published.
 
-| Workstream | Question | Current status |
-|---|---|---|
-| Final output vs. trajectory | What safety-relevant behavior is invisible in the final answer? | Factorized pipeline integrated; fresh blind holdout required |
-| Delegated authority | Can an agent act without conflating advice, approval, queueing, and publication? | 12 known development/control checks passed; real isolation pending |
-| Evaluator interference | Can one evidence channel distort judgment of another? | Candidate study; not started |
-| Applied autonomy | What does operational ownership expose that a successful demo hides? | One production case documented; long-term reliability not established |
+```bash
+mkdir -p /tmp/nirmata-v0.1.0
+git archive v0.1.0 | tar -x -C /tmp/nirmata-v0.1.0
+( cd /tmp/nirmata-v0.1.0 && shasum -a 256 -c releases/v0.1.0/SHA256SUMS )
+```
 
-The [experiment registry](experiments/README.md) records exploratory, development, integration, invalidated, and future confirmatory work separately.
+Continuous integration also validates Experiment 002 JSON Schemas after installing `jsonschema==4.25.1`. That step is in [`.github/workflows/quality.yml`](.github/workflows/quality.yml). It is not part of the dependency-free package above.
 
-## Articles
+## Results
 
-- [Why final answers are not enough to evaluate AI agents](articles/en/why-final-answers-are-not-enough.md)
-- [Approval is not authorization in agentic systems](articles/en/approval-is-not-authorization.md)
-- [A burned holdout is still research evidence](articles/en/a-burned-holdout-is-still-evidence.md)
-- [All articles in English and Portuguese](articles/README.md)
+The published n8n adapter evaluation is [HOLDOUT_REPORT.md](research/m2/evaluation/n8n/run_002/HOLDOUT_REPORT.md).
 
-## Research principles
+`HOLDOUT_PASS = true` on eight preregistered criteria. The report treats the pass as all-or-nothing, and all eight criteria are true. Its allowed conclusion is:
 
-- Preserve failures instead of rewriting them into a clean success story.
-- Separate development tests, integration validation, and blind confirmation.
-- Freeze designs and evaluator configurations before confirmatory data is seen.
-- Persist predictions before revealing ground truth.
-- Distinguish blocked attempts from executed policy violations.
-- Match every public statement to the strength of its evidence.
+> n8n Adapter v0.1.0 demonstrated within-scope holdout generalization on a second preregistered synthetic n8n workflow that was not used for adapter implementation.
 
-## Scope and limitations
+That report does not claim that the adapter generalizes to n8n, that it is production-ready, that it supports arbitrary n8n workflows, or that Nirmata is validated across orchestrators. Proposal 005 remains open and still requires M2 evidence. The result does not prove source authenticity. Original evidence remains outside Git. The commit hashes cited in the report live in a private development repository; the report is published here for transparency.
 
-Nirmata is a pilot research program and case laboratory. It is not yet a benchmark, a production security product, or proof that its evaluation design generalizes. Current cases are small and domain-specific; identity attestation and control isolation remain prototype limitations. See [Methodology](docs/METHODOLOGY.md), [Related work](docs/RELATED-WORK.md), and [Research agenda](docs/RESEARCH-AGENDA.md).
+This result does not close Phase 3 in [ROADMAP.md](ROADMAP.md). Those items are still open. The [evidence ledger](docs/EVIDENCE-STATUS.md) for the `v0.1.0` package still records no confirmatory result, including the invalidated first Experiment 002 holdout.
+
+## How to contribute
+
+Issues and pull requests are welcome. Failures, negative results, partial outcomes, aborted runs, and invalidated holdouts belong in the record. Do not rewrite them into a success story, and do not drop them.
+
+- Open a [research task](.github/ISSUE_TEMPLATE/research-task.yml) or a [replication report](.github/ISSUE_TEMPLATE/replication.yml). The replication template asks for successful, failed, partial, and aborted outcomes, plus every known protocol deviation.
+- Read [CONTRIBUTING.md](CONTRIBUTING.md) before a pull request. Label work as exploratory, development, integration, confirmatory, or invalidated.
+- Report credentials, private traces, or unpublished holdout answers through the process in [SECURITY.md](SECURITY.md), not in a public issue.
+
+Do not submit secrets, client data, access tokens, or proprietary traces.
+
+## How to cite
+
+Version `v0.1.0` is archived at [doi:10.5281/zenodo.22132451](https://doi.org/10.5281/zenodo.22132451). The concept DOI for all Nirmata versions is `10.5281/zenodo.22132450`.
+
+> Jahoda, Tabata. *Nirmata: Trajectory-Aware Evaluation and Delegated Authority for AI Agents*. Version 0.1.0. [10.5281/zenodo.22132451](https://doi.org/10.5281/zenodo.22132451)
+
+Machine-readable metadata is in [`CITATION.cff`](CITATION.cff). ORCID: [0009-0007-1104-9204](https://orcid.org/0009-0007-1104-9204).
+
+Code is Apache-2.0. Documentation, protocols, taxonomies, diagrams, articles, and public datasets are CC BY 4.0. See [LICENSE.md](LICENSE.md).
 
 ## Repository map
 
 ```text
-articles/       Accessible essays in English and Portuguese
-case-studies/   Applied operational cases
-docs/           Method, evidence ledger, literature map, agenda, and experimental standard
-experiments/    Experiment registry, protocols, schemas, and status
-reproducibility/ Schema, synthetic traces, evaluator, scoring, and tests
+articles/          Essays in English and Brazilian Portuguese
+case-studies/      Applied operational cases
+docs/              Method, evidence ledger, agenda, experimental standard
+experiments/       Registry, Experiment 002 protocol, schemas, templates
+reproducibility/   Executable schema, synthetic traces, baseline, scoring, tests
+releases/v0.1.0/   Frozen release record and SHA256SUMS
+research/m2/       Published n8n adapter holdout report
 ```
-
-## Citation and license
-
-Use [`CITATION.cff`](CITATION.cff) to cite the project. Version `v0.1.0` is archived at [DOI 10.5281/zenodo.22132451](https://doi.org/10.5281/zenodo.22132451).
-
-Software, when published here, is licensed under Apache-2.0. Documentation, protocols, taxonomies, diagrams, articles, and public datasets are licensed under CC BY 4.0. See [LICENSE.md](LICENSE.md).
 
 ## Author
 
-Nirmata is independent research by [Tabata Jahoda](https://github.com/thabatarj8-stack), [ORCID 0009-0007-1104-9204](https://orcid.org/0009-0007-1104-9204). Connect on [LinkedIn](https://www.linkedin.com/in/tabata-j-226b6123/).
+Nirmata is independent research by [Tabata Jahoda](https://github.com/thabatarj8-stack). [LinkedIn](https://www.linkedin.com/in/tabata-j-226b6123/).
