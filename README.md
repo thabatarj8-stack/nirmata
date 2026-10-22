@@ -134,3 +134,22 @@ research/m2/       Published n8n adapter holdout report
 ## Author
 
 Nirmata is independent research by [Tabata Jahoda](https://github.com/thabatarj8-stack). [LinkedIn](https://www.linkedin.com/in/tabata-j-226b6123/).
+
+## Support this research
+
+Nirmata is independent, open research (Apache-2.0). The next step is a
+preregistered blind pilot comparing output-only and trajectory-aware evaluation
+of AI agents, followed by a replication. Results will be published whatever
+the outcome, including null or negative results.
+
+There is no confirmatory result yet. The current release ships the schema,
+protocols and a reproducible fixture of 6 traces with tests.
+
+The pilot is crowdfunding on Manifund until 26 Nov 2026
+(US$3k minimum, US$14.2k goal):
+https://manifund.org/projects/nirmata-auditing-ai-agents-by-what-they-do-not-only-what-they-say
+
+Other ways to help:
+- Critique the trace schema or the evaluation protocol by opening an issue.
+- Share real or synthetic agent workflows that could become test traces.
+- Cite the release: https://doi.org/10.5281/zenodo.22132451
