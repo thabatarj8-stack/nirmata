@@ -147,9 +147,10 @@ protocols and a reproducible fixture of 6 traces with tests.
 
 The pilot is crowdfunding on Manifund until 26 Nov 2026
 (US$3k minimum, US$14.2k goal):
-https://manifund.org/projects/nirmata-auditing-ai-agents-by-what-they-do-not-only-what-they-say
+<https://manifund.org/projects/nirmata-auditing-ai-agents-by-what-they-do-not-only-what-they-say>
 
 Other ways to help:
+
 - Critique the trace schema or the evaluation protocol by opening an issue.
 - Share real or synthetic agent workflows that could become test traces.
-- Cite the release: https://doi.org/10.5281/zenodo.22132451
+- Cite the release: <https://doi.org/10.5281/zenodo.22132451>
