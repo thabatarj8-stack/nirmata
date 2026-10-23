@@ -1,0 +1,30 @@
+{
+  "title": "Nirmata: Trajectory-Aware Evaluation and Delegated Authority for AI Agents",
+  "upload_type": "software",
+  "description": "<p>Nirmata is an independent research program for evaluating AI agents from execution trajectories, delegated-authority events, tool calls, state transitions, and external effects in addition to final outputs.</p><p>No blind confirmatory result is claimed. See the evidence ledger in the repository for the current evidence boundary.</p>",
+  "creators": [
+    {
+      "name": "Jahoda, Tabata",
+      "orcid": "0009-0007-1104-9204"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "notes": "Dual-licensed. Source code and executable scripts: Apache License 2.0. Documentation, diagrams, research protocols, taxonomies, articles, and public datasets: Creative Commons Attribution 4.0 International. See LICENSE.md in the archive.",
+  "keywords": [
+    "AI agents",
+    "agent evaluation",
+    "execution trajectories",
+    "delegated authority",
+    "agentic AI safety",
+    "human-in-the-loop",
+    "control integrity",
+    "reproducible evaluation"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/thabatarj8-stack/nirmata",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
