@@ -1,0 +1,39 @@
+---
+description: "Convenções do site MkDocs bilíngue e pendências da Etapa A, sem merge nem mudança de Settings"
+globs: "mkdocs.yml,website/**,overrides/**,hooks/**,.github/workflows/pages.yml"
+alwaysApply: false
+---
+
+# Site Nirmata
+
+O site é MkDocs Material, bilíngue, com `docs_dir: website`. Inglês é o locale padrão. Português do Brasil usa o sufixo do plugin i18n: `index.md` e `index.pt-BR.md`. Os dois dizem a mesma coisa com a mesma força de evidência. A tradução não ameniza limite, não apaga holdout invalidado e não transforma a baseline sintética em pontuação de modelo.
+
+Texto em português não usa travessão nem meia-risca.
+
+## Convenções
+
+- `site_url`: `https://thabatarj8-stack.github.io/nirmata/`
+- Tema em `overrides/`, hook em `hooks/i18n_links.py`, CSS em `website/stylesheets/extra.css`.
+- Navegação dos dois idiomas fica em `mkdocs.yml`. Página nova com tradução entra nos dois `nav`.
+- A barra de `overrides/main.html` mantém, nos dois idiomas, o piloto em estágio inicial e a ausência de resultado confirmatório cego.
+- Documentação é CC BY 4.0. Código é Apache-2.0.
+- Busca em `en` e `pt`.
+- `mkdocs build --strict` é a barreira. Warning de link vira erro. O job de build em `.github/workflows/pages.yml` e, no branch do site, o job `site` do CI precisam passar.
+- Dependências: `pip install -r requirements-docs.txt`.
+- Não enfraqueça a home. Os limites de `.cursor/rules/nirmata-core.mdc` e de `docs/EVIDENCE-STATUS.md` continuam visíveis.
+
+## Etapa A, ainda aberta
+
+O trabalho de site mora no branch `cursor/nirmata-docs-site-00c6` (PR #20). Não traga esse diff para o branch das regras do estúdio. Não faça merge.
+
+1. O README v2 e o pitch com o Theo estão em `/workspace/grants/comunicacao_v2/` no computador do bot, fora deste repositório. Só alinhe `website/index.md` e `website/index.pt-BR.md` a esse texto depois que a Tabata disser que ele foi aprovado. Sem esse sim, preserve a home e não invente afirmação nova.
+2. Ajustes opcionais já apontados na revisão:
+   - Na linha do Manifund, colocar uma data de atualização ou retirar o prazo e os valores. O prazo citado vale até 26/11/2026. Não inventar números.
+   - No job `deploy` de `.github/workflows/pages.yml`, adicionar `if: github.ref == 'refs/heads/main'`.
+   - Em `overrides/main.html`, trocar `docs/EVIDENCE-STATUS/index.html` por `docs/EVIDENCE-STATUS/`. O link pt-BR que termina em `index.html` recebe o mesmo ajuste.
+3. Rodar `pip install -r requirements-docs.txt` e `mkdocs build --strict`. O CI existente tem de passar, inclusive `scripts/audit_publication_safety.py`.
+4. Parar antes do merge e mostrar o diff.
+
+Settings, Pages com Source em GitHub Actions, e a homepage do repositório (`https://thabatarj8-stack.github.io/nirmata/`) só depois de um sim explícito da Tabata. Merge também.
+
+Prompts prontos: `studio/PROMPTS.md`. Plano: `studio/PLANO.md`.
