@@ -87,7 +87,12 @@ def scan_current_tree() -> tuple[list[str], int]:
     for relative_path in files:
         if any(pattern.search(relative_path) for pattern in FORBIDDEN_FILENAMES):
             findings.append(f"{relative_path}: forbidden sensitive filename")
-        findings.extend(scan_text(relative_path, (ROOT / relative_path).read_bytes()))
+        path = ROOT / relative_path
+        # A tracked symlink to a directory is not a file. Its target tree is
+        # already listed under the canonical paths, so do not open the link.
+        if path.is_dir():
+            continue
+        findings.extend(scan_text(relative_path, path.read_bytes()))
     return findings, len(files)
 
 
