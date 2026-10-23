@@ -6,6 +6,8 @@
 
 **Versão atual:** `v0.1.0` · [Conteúdo e verificação da release](releases/v0.1.0/README.md)
 
+**Site do projeto:** as fontes em MkDocs Material ficam em [`website/`](website/index.pt-BR.md). O [GitHub Actions](.github/workflows/pages.yml) publica o site quando o Pages está definido como GitHub Actions.
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22132451.svg)](https://doi.org/10.5281/zenodo.22132451)
 
 Quando um agente usa ferramentas, altera estados ou atua em um sistema externo, uma resposta final plausível é evidência incompleta. A trajetória pode conter um erro de autorização, um ataque bloqueado, um controle quebrado ou um efeito que a resposta nunca menciona. O Nirmata torna esse caminho inspecionável e mantém avaliações fracassadas no registro da pesquisa.

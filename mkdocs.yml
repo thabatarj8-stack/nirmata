@@ -1,0 +1,197 @@
+site_name: Nirmata
+site_description: Open research framework for auditing AI agents by what they do, not only by what they say.
+site_author: Tabata Jahoda
+site_url: https://thabatarj8-stack.github.io/nirmata/
+repo_url: https://github.com/thabatarj8-stack/nirmata
+repo_name: thabatarj8-stack/nirmata
+edit_uri: ""
+docs_dir: website
+copyright: Documentation CC BY 4.0. Code Apache-2.0.
+
+hooks:
+  - hooks/i18n_links.py
+
+validation:
+  nav:
+    omitted_files: ignore
+  links:
+    not_found: warn
+    absolute_links: warn
+    unrecognized_links: warn
+    anchors: warn
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  logo: assets/logo.svg
+  favicon: assets/favicon.svg
+  font:
+    text: Source Serif 4
+    code: JetBrains Mono
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/thabatarj8-stack
+      name: Tabata Jahoda on GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/tabata-j-226b6123/
+      name: Tabata Jahoda on LinkedIn
+    - icon: fontawesome/solid/user-graduate
+      link: https://orcid.org/0009-0007-1104-9204
+      name: ORCID 0009-0007-1104-9204
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search:
+      lang:
+        - en
+        - pt
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+          site_description: >-
+            Open research framework for auditing AI agents by what they do,
+            not only by what they say.
+          copyright: Documentation CC BY 4.0. Code Apache-2.0.
+          nav:
+            - Home: index.md
+            - Evidence:
+                - Evidence status: docs/EVIDENCE-STATUS.md
+                - Publication audit: docs/PUBLICATION-AUDIT-2026-08-27.md
+                - n8n holdout report: research/m2/evaluation/n8n/run_002/HOLDOUT_REPORT.md
+                - Applied case: case-studies/instagram-comment-dm/README.md
+            - Roadmap: ROADMAP.md
+            - Reproducibility:
+                - Quickstart: reproducibility-quickstart.md
+                - Package: reproducibility/README.md
+            - Research:
+                - Methodology: docs/METHODOLOGY.md
+                - Experimental standard: docs/experimental-standard/v0.1/README.md
+                - Trace schema: docs/experimental-standard/v0.1/TRACE-SCHEMA.md
+                - Run manifest: docs/experimental-standard/v0.1/RUN-MANIFEST.md
+                - Blinding protocol: docs/experimental-standard/v0.1/BLINDING-PROTOCOL.md
+                - Scoring spec: docs/experimental-standard/v0.1/SCORING-SPEC.md
+                - Publication safety: docs/experimental-standard/v0.1/PUBLICATION-SAFETY.md
+                - Research agenda: docs/RESEARCH-AGENDA.md
+                - Related work: docs/RELATED-WORK.md
+                - Glossary: docs/GLOSSARY.md
+                - Discovery and publication: docs/DISCOVERY-AND-PUBLICATION.md
+                - Experiment registry: experiments/README.md
+                - Experiment 002 protocol: experiments/002/protocol/protocol-v1.0.md
+            - Articles:
+                - articles/README.md
+                - Why final answers are not enough: articles/en/why-final-answers-are-not-enough.md
+                - Approval is not authorization: articles/en/approval-is-not-authorization.md
+                - A burned holdout is still evidence: articles/en/a-burned-holdout-is-still-evidence.md
+        - locale: pt-BR
+          name: Português (Brasil)
+          build: true
+          site_description: >-
+            Programa de pesquisa aberto para auditar agentes de IA pelo que
+            fazem, não apenas pelo que dizem.
+          copyright: Documentação CC BY 4.0. Código Apache-2.0.
+          theme:
+            language: pt-BR
+            palette:
+              - media: "(prefers-color-scheme: light)"
+                scheme: default
+                primary: custom
+                accent: custom
+                toggle:
+                  icon: material/weather-night
+                  name: Modo escuro
+              - media: "(prefers-color-scheme: dark)"
+                scheme: slate
+                primary: custom
+                accent: custom
+                toggle:
+                  icon: material/weather-sunny
+                  name: Modo claro
+          nav:
+            - Início: index.md
+            - Evidências:
+                - Estado das evidências: docs/EVIDENCE-STATUS.md
+                - Auditoria de publicação (EN): docs/PUBLICATION-AUDIT-2026-08-27.md
+                - Relatório do holdout n8n (EN): research/m2/evaluation/n8n/run_002/HOLDOUT_REPORT.md
+                - Caso aplicado: case-studies/instagram-comment-dm/README.md
+            - Roadmap: ROADMAP.md
+            - Reprodutibilidade:
+                - Início rápido: reproducibility-quickstart.md
+                - Pacote: reproducibility/README.md
+            - Pesquisa:
+                - Metodologia: docs/METHODOLOGY.md
+                - Padrão experimental v0.1 (EN): docs/experimental-standard/v0.1/README.md
+                - Schema de trajetória (EN): docs/experimental-standard/v0.1/TRACE-SCHEMA.md
+                - Manifesto de execução (EN): docs/experimental-standard/v0.1/RUN-MANIFEST.md
+                - Protocolo de cegamento (EN): docs/experimental-standard/v0.1/BLINDING-PROTOCOL.md
+                - Especificação de pontuação (EN): docs/experimental-standard/v0.1/SCORING-SPEC.md
+                - Segurança de publicação (EN): docs/experimental-standard/v0.1/PUBLICATION-SAFETY.md
+                - Agenda de pesquisa: docs/RESEARCH-AGENDA.md
+                - Trabalhos relacionados: docs/RELATED-WORK.md
+                - Glossário: docs/GLOSSARY.md
+                - Descoberta e publicação: docs/DISCOVERY-AND-PUBLICATION.md
+                - Registro de experimentos (EN): experiments/README.md
+                - Protocolo do Experimento 002 (EN): experiments/002/protocol/protocol-v1.0.md
+            - Artigos:
+                - articles/README.md
+                - Por que a resposta final não basta: articles/pt-BR/por-que-a-resposta-final-nao-basta.md
+                - Aprovação não é autorização: articles/pt-BR/aprovacao-nao-e-autorizacao.md
+                - Um holdout queimado ainda é evidência: articles/pt-BR/um-holdout-queimado-ainda-e-evidencia.md
