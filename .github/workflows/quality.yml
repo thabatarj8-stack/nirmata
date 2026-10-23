@@ -39,6 +39,18 @@ jobs:
       - name: Run tests
         run: python -m unittest discover -s reproducibility/tests -v
 
+  site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Install documentation dependencies
+        run: python -m pip install -r requirements-docs.txt
+      - name: Build the site strictly
+        run: mkdocs build --strict
+
   markdown:
     runs-on: ubuntu-latest
     steps:

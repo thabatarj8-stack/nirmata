@@ -1,0 +1,128 @@
+:root {
+  --md-primary-fg-color: #14343c;
+  --md-primary-fg-color--light: #3d6670;
+  --md-primary-fg-color--dark: #0c242b;
+  --md-primary-bg-color: #f7f4ee;
+  --md-primary-bg-color--light: #fffdf8;
+  --md-accent-fg-color: #9a4e2c;
+  --md-accent-fg-color--transparent: rgba(154, 78, 44, 0.12);
+  --md-typeset-a-color: #0e4f4a;
+  --md-default-bg-color: #f6f3ec;
+  --md-footer-bg-color: #10262c;
+  --md-footer-fg-color: #f6f3ec;
+  --nirmata-ink: #14343c;
+  --nirmata-copper: #9a4e2c;
+  --nirmata-paper: #f6f3ec;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #10262c;
+  --md-primary-fg-color--light: #245058;
+  --md-primary-fg-color--dark: #08181c;
+  --md-primary-bg-color: #f7f4ee;
+  --md-accent-fg-color: #e0a070;
+  --md-typeset-a-color: #8fd0c8;
+  --md-default-bg-color: #12181b;
+  --nirmata-ink: #f6f3ec;
+  --nirmata-copper: #e0a070;
+}
+
+[data-md-color-scheme="default"] .md-main {
+  background-color: #f6f3ec;
+}
+
+.md-header {
+  background-color: #14343c;
+}
+
+.md-tabs {
+  background-color: #10262c;
+}
+
+.md-banner {
+  background-color: #9a4e2c;
+  color: #fffaf3;
+}
+
+.md-banner a {
+  color: #fffaf3;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.md-typeset {
+  font-size: 0.92rem;
+}
+
+.md-typeset h1 {
+  color: var(--nirmata-ink);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.md-typeset blockquote.thesis {
+  border-left: 0;
+  border-top: 1px solid rgba(154, 78, 44, 0.45);
+  border-bottom: 1px solid rgba(154, 78, 44, 0.45);
+  color: var(--nirmata-ink);
+  font-size: 1.28rem;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 1.1rem 0 1.25rem;
+  padding: 0.85rem 0;
+}
+
+.md-typeset .admonition.evidence,
+.md-typeset details.evidence {
+  background-color: #14343c;
+  border: 0;
+  box-shadow: none;
+  color: #f7f4ee;
+}
+
+.md-typeset .admonition.evidence > .admonition-title,
+.md-typeset details.evidence > summary {
+  background-color: transparent;
+  border: 0;
+  color: #f0d7b5;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.md-typeset .admonition.evidence > .admonition-title::before,
+.md-typeset details.evidence > summary::before {
+  background-color: #f0d7b5;
+}
+
+.md-typeset .admonition.evidence p,
+.md-typeset .admonition.evidence li,
+.md-typeset details.evidence p,
+.md-typeset details.evidence li {
+  color: #f7f4ee;
+}
+
+.md-typeset .admonition.evidence a,
+.md-typeset details.evidence a {
+  color: #f0d7b5;
+}
+
+.md-typeset h2.boundary-title {
+  border-top: 1px solid rgba(154, 78, 44, 0.35);
+  margin-top: 1.6rem;
+  padding-top: 1.15rem;
+}
+
+.md-typeset .grid.cards > ul > li {
+  border-color: rgba(20, 52, 60, 0.14);
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: #9a4e2c;
+  box-shadow: 0 0 0 1px #9a4e2c;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: rgba(20, 52, 60, 0.06);
+}
