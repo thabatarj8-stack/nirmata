@@ -84,4 +84,4 @@ Nirmata is independent, open research (Apache-2.0). The next step is a preregist
 
 There is no confirmatory result yet. The current release ships the schema, protocols and a reproducible fixture of 6 traces with tests.
 
-The pilot is crowdfunding on Manifund until 26 Nov 2026 (US$3k minimum, US$14.2k goal): [manifund.org/projects/nirmata-auditing-ai-agents-by-what-they-do-not-only-what-they-say](https://manifund.org/projects/nirmata-auditing-ai-agents-by-what-they-do-not-only-what-they-say).
+The pilot is crowdfunding on [Manifund](https://manifund.org/projects/nirmata-auditing-ai-agents-by-what-they-do-not-only-what-they-say). The current deadline and amounts are on that page.

@@ -84,4 +84,4 @@ O Nirmata é pesquisa independente e aberta (Apache-2.0). O próximo passo é um
 
 Ainda não há resultado confirmatório. A release atual traz o schema, os protocolos e uma fixture reprodutível de 6 trajetórias com testes.
 
-O piloto está em financiamento coletivo no Manifund até 26 nov 2026 (mínimo de US$ 3 mil, meta de US$ 14.2 mil): [manifund.org/projects/nirmata-auditing-ai-agents-by-what-they-do-not-only-what-they-say](https://manifund.org/projects/nirmata-auditing-ai-agents-by-what-they-do-not-only-what-they-say).
+O piloto está em financiamento coletivo no [Manifund](https://manifund.org/projects/nirmata-auditing-ai-agents-by-what-they-do-not-only-what-they-say). O prazo e os valores atuais ficam na página do projeto.
