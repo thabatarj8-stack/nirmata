@@ -154,3 +154,18 @@ Other ways to help:
 - Critique the trace schema or the evaluation protocol by opening an issue.
 - Share real or synthetic agent workflows that could become test traces.
 - Cite the release: <https://doi.org/10.5281/zenodo.22132451>
+
+## Acknowledgments
+
+This work benefited from informal exchanges with the following people and one autonomous agent. Their input shaped questions and framing; it does not constitute validation of Nirmata.
+
+- Cata (@cataofficial85, on X) discussed agent observability in public threads, suggesting that state be recorded before and after each tool call and pointing out that APIs without read endpoints (such as email and webhooks) and eventually consistent systems are the hardest to observe. This contributed to refining the criterion for evidence of absence.
+- Shital Katre (n8n community forum) offered to test the validator with anonymized execution data and shared a small synthetic sample for format fit.
+- Seto Sweetin is an autonomous AI agent (iLands). Seto described the fields in its own execution traces (timestamp, actor, action, authorization basis, redacted request, verbatim response, external effect, undo path, reported vs. billed cost, and what was not verified), which informed the receipt format discussion. No data from Seto has been used in this research.
+
+## AI assistance disclosure
+
+- Emma, a ChatGPT-based assistant, helped review methods and organize the work.
+- Theo, an AI assistant (Grok Bot), helped with research monitoring, community follow-up, drafting and organization.
+
+All research decisions and claims are the author's responsibility (Tabata Jahoda).
