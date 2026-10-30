@@ -25,6 +25,8 @@ python3 scripts/check_local_links.py
 python3 reproducibility/scripts/validate.py
 python3 -m unittest discover -s reproducibility/tests -v
 npx --yes markdownlint-cli2@0.23.2 "**/*.md" "#LICENSES/**"
+python3 -m pip install -r requirements-docs.txt
+mkdocs build --strict
 ```
 
 ## Data safety

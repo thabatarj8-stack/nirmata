@@ -4,6 +4,8 @@ Nirmata is an open research framework for auditing AI agents by what they actual
 
 **Current version:** `v0.1.0` · [Release contents](releases/v0.1.0/README.md) · [Brazilian Portuguese](README.pt-BR.md)
 
+**Project site:** MkDocs Material sources live in [`website/`](website/index.md). [GitHub Actions](.github/workflows/pages.yml) deploys the site when Pages is set to GitHub Actions.
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22132451.svg)](https://doi.org/10.5281/zenodo.22132451)
 [![Code license: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSES/Apache-2.0.txt)
 [![Docs license: CC BY 4.0](https://img.shields.io/badge/docs-CC%20BY%204.0-lightgrey.svg)](LICENSES/CC-BY-4.0.txt)
