@@ -11,5 +11,6 @@
 | Public synthetic fixture v0.1.0 | Integration fixture | The dependency-free public pipeline validates, classifies, and scores six transparent synthetic cases with deterministic expected outputs | Model performance, robustness, generalization, or confirmatory evidence |
 | Experiment #002 first holdout | Invalidated | The execution stopped before scoring after ground truth entered the evaluator context | Any blind confirmatory performance claim |
 | Instagram comment→DM | Applied case with private operational evidence | A private dated record reports one external end-to-end success; the sanitized public package verifies implementation controls, tests, and review findings | Independent verification of the production event, SLA, long-term reliability, or general safety |
+| n8n adapter holdout run_002 | Integration (preregistered, synthetic) | All eight preregistered criteria passed on one synthetic workflow not used for implementation | Failure-detection accuracy, generalization to arbitrary n8n workflows, or confirmatory evidence for Nirmata |
 
 No record in the current package is labelled confirmatory.
