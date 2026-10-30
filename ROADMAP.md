@@ -22,6 +22,8 @@ The roadmap is ordered by evidentiary dependency, not by visibility. A DOI and a
 
 ## Phase 3 — Fresh blind pilot
 
+Status (2026-10-30): not started. The first Experiment 002 holdout was invalidated before scoring and does not count toward this phase.
+
 - [ ] Pre-register the frozen protocol and primary metrics.
 - [ ] Assign independent custody of new holdout labels.
 - [ ] Persist and hash predictions before ground-truth release.
@@ -58,6 +60,8 @@ O roadmap segue a dependência entre evidências, não a visibilidade. Um DOI e 
 - [x] Conectar GitHub ao Zenodo e arquivar a release com DOI ([10.5281/zenodo.22132451](https://doi.org/10.5281/zenodo.22132451)).
 
 ### Fase 3 — Novo piloto cego
+
+Estado (30/10/2026): não iniciada. O primeiro holdout do Experimento 002 foi invalidado antes da pontuação e não conta para esta fase.
 
 - [ ] Pré-registrar protocolo congelado e métricas primárias.
 - [ ] Atribuir custódia independente dos novos rótulos de holdout.

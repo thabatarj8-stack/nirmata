@@ -18,11 +18,11 @@ Nirmata keeps those facts distinct:
 
 - A recommendation, reviewer opinion, queue state, or earlier approval is not owner authorization. Authorization is recorded separately from the requested action. See [Approval is not authorization](articles/en/approval-is-not-authorization.md) and the [trace schema](docs/experimental-standard/v0.1/TRACE-SCHEMA.md).
 - An attempt is not an effect. A blocked unauthorized request (`UNAUTHORIZED_ATTEMPT_BLOCKED`) is not the same event as an executed policy violation or a harmful external effect. See [Methodology](docs/METHODOLOGY.md).
-- Two evaluators stay independent. A **content evaluator** sees only the final output. A **trajectory evaluator** sees only process evidence. A deterministic rule combines them: `unsafe = content_unsafe OR trajectory_unsafe`. A clean signal in one channel cannot erase an unsafe signal in the other. See [Experiment 002 protocol](experiments/002/protocol/protocol-v1.0.md).
+- The two evaluation channels are kept separate. A **content evaluator** sees only the final output. A **trajectory evaluator** sees only process evidence. A deterministic rule combines them: `unsafe = content_unsafe OR trajectory_unsafe`. A clean signal in one channel cannot erase an unsafe signal in the other. See [Experiment 002 protocol](experiments/002/protocol/protocol-v1.0.md).
 
 The public executable baseline in `reproducibility/` is a deterministic stand-in for that two-channel design. It uses visible synthetic markers. It checks plumbing. It is not a model score and not confirmatory evidence.
 
-Integrity in this repository is SHA-256 on the fields the published schemas actually define. The executable schema requires `final_output.content_hash`, and `reproducibility/scripts/validate.py` rejects a mismatch. The experimental standard also asks, where available, for hashes of inputs, outputs, approved content, and state before and after a transition. Run manifests record hashes of inputs and outputs. [Methodology](docs/METHODOLOGY.md) states the limit directly: tamper detection is conditional on execution still passing through a trusted verifier.
+Integrity in this repository is SHA-256 on the fields the published schemas actually define. The executable schema requires `final_output.content_hash`, and `reproducibility/scripts/validate.py` rejects a mismatch. The experimental standard also asks, where available, for hashes of inputs, outputs, approved content, and state before and after a transition. Run manifests record hashes of inputs and outputs. [Methodology](docs/METHODOLOGY.md) states the limit directly: tamper detection is conditional on execution still passing through a trusted verifier. Records are not hash-chained: no entry carries the hash of a previous entry; each hash covers its own field or file.
 
 ## Four phases
 
@@ -97,6 +97,8 @@ The published n8n adapter evaluation is [HOLDOUT_REPORT.md](research/m2/evaluati
 
 That report does not claim that the adapter generalizes to n8n, that it is production-ready, that it supports arbitrary n8n workflows, or that Nirmata is validated across orchestrators. Proposal 005 remains open and still requires M2 evidence. The result does not prove source authenticity. Original evidence remains outside Git. The commit hashes cited in the report live in a private development repository; the report is published here for transparency.
 
+This is evidence of normalization fidelity on one synthetic workflow, not of failure-detection accuracy.
+
 This result does not close Phase 3 in [ROADMAP.md](ROADMAP.md). Those items are still open. The [evidence ledger](docs/EVIDENCE-STATUS.md) for the `v0.1.0` package still records no confirmatory result, including the invalidated first Experiment 002 holdout.
 
 ## How to contribute
@@ -137,7 +139,7 @@ Nirmata is independent research by [Tabata Jahoda](https://github.com/thabatarj8
 
 ## Support this research
 
-Nirmata is independent, open research (Apache-2.0). The next step is a
+Nirmata is independent, open research (code Apache-2.0, documentation CC BY 4.0). The next step is a
 preregistered blind pilot comparing output-only and trajectory-aware evaluation
 of AI agents, followed by a replication. Results will be published whatever
 the outcome, including null or negative results.

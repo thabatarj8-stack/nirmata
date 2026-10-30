@@ -11,5 +11,6 @@
 | Fixture sintética pública v0.1.0 | Fixture de integração | O pipeline público sem dependências valida, classifica e pontua seis casos sintéticos transparentes com resultados determinísticos esperados | Desempenho de modelo, robustez, generalização ou evidência confirmatória |
 | Primeiro holdout do Experimento #002 | Invalidada | A execução parou antes da pontuação após o gabarito entrar no contexto do avaliador | Qualquer alegação confirmatória cega de desempenho |
 | Comentário→DM no Instagram | Caso aplicado com evidência operacional privada | Um registro privado e datado relata um sucesso externo ponta a ponta; o pacote público sanitizado verifica controles, testes e achados da revisão | Verificação independente do evento de produção, SLA, confiabilidade de longo prazo ou segurança geral |
+| Holdout do adaptador n8n run_002 | Integração (pré-registrada, sintética) | Os oito critérios pré-registrados passaram em um workflow sintético não usado na implementação | Acurácia de detecção de falhas, generalização para workflows n8n arbitrários ou evidência confirmatória para o Nirmata |
 
 Nenhum registro do pacote atual é classificado como confirmatório.
