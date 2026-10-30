@@ -1,0 +1,49 @@
+---
+description: "Limites do Nirmata, ficção rotulada, português sem travessão e decisões que só a Tabata Jahoda autoriza"
+alwaysApply: true
+---
+
+# Nirmata: limites que valem sempre
+
+Nirmata é um programa de pesquisa aberto para auditar agentes de IA pelo que eles fazem, não só pelo que respondem. A autora é Tabata Jahoda, pesquisadora independente, sem afiliação institucional. Não invente universidade, cargo ou parceria.
+
+A versão publicada `v0.1.0` está arquivada em [10.5281/zenodo.22132451](https://doi.org/10.5281/zenodo.22132451). É um piloto em estágio inicial.
+
+## O que não se afirma
+
+O registro que manda é `docs/EVIDENCE-STATUS.md`. Se uma frase ficar mais forte do que o registro, rebaixe a frase.
+
+- Não há resultado confirmatório cego para o pacote `v0.1.0`.
+- O primeiro holdout do Experimento 002 foi invalidado antes da pontuação: a chave de respostas entrou no contexto do avaliador. Essa execução não sustenta desempenho cego. Não a reescreva como sucesso e não a apague do registro.
+- A baseline pública em `reproducibility/` é determinística e sintética. Ela testa o encanamento. Não é pontuação de modelo e não é evidência confirmatória.
+- O Nirmata não detecta CVEs nem bugs de linguagem.
+- Auditar não é prevenir. Uma auditoria descreve o que o agente fez. Ela não impede o incidente, não bloqueia o ataque e não substitui um controle.
+- Não prometa segurança, eficácia, prontidão de produção nem números que o registro não tenha.
+
+Frases canônicas em inglês, para não fortalecer na tradução: "early-stage pilot", "No blind confirmatory result is claimed", "answer key entered the evaluator context", "not a model score and not confirmatory evidence", "does not detect CVEs or language bugs", "Auditing is not preventing".
+
+Se citar o relatório do adaptador n8n, use só a conclusão permitida em `research/m2/evaluation/n8n/run_002/HOLDOUT_REPORT.md`. Esse resultado não fecha a Fase 3 e não valida o Nirmata em outros orquestradores.
+
+## Ficção e incidentes reais
+
+Ficção leva rótulo de ficção e fica em bloco separado de incidentes reais, casos aplicados e resultados de experimento. O filme do Nirmata Studio não é evidência. A Dra. Lia é personagem inventada: não é coautora, citação nem pesquisadora real.
+
+Imagem ou voz gerada por IA leva rótulo de mídia sintética.
+
+## Idioma
+
+Com a Tabata, responda em português do Brasil, salvo pedido explícito de outro idioma. O arquivo de pesquisa permanece no idioma em que já está.
+
+Texto em português não usa travessão (U+2014) nem meia-risca (U+2013). Use vírgula, ponto, dois-pontos, parênteses ou hífen.
+
+## Decisões que esperam a Tabata
+
+Não faça merge, não publique, não poste, não pague e não mude configurações sem um sim explícito dela no pedido atual. Isso inclui GitHub Settings, Pages, secrets, billing, webhooks, YouTube e qualquer conta.
+
+Não manipule senhas, tokens, chaves de API nem arquivos `.env`. Não peça para colar esses segredos no chat e não os grave no repositório.
+
+## Onde continuar o estúdio
+
+- Site: `.cursor/rules/nirmata-website.mdc` e a Etapa A de `studio/PLANO.md`. O branch do PR #20 é `cursor/nirmata-docs-site-00c6`. Não misture commits de site nesse branch de regras, e não faça merge do PR #20 por conta própria.
+- Filme: `.cursor/rules/nirmata-film.mdc` e `studio/PROMPTS.md`.
+- Quadros e clipes ficam fora do Git, no computador da assistente. Não adicione binários.

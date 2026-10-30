@@ -1,0 +1,101 @@
+---
+description: "Direção do filme Nirmata Studio: master em inglês, cinema sem cara de IA, personagem fixa e mídia fora do Git"
+globs: "studio/**"
+alwaysApply: false
+---
+
+# Filme Nirmata Studio
+
+Episódio 1, título de trabalho em inglês: "I updated X". Título de trabalho em português: "Eu atualizei X". Duração prevista do master: cerca de 3 minutos, 16:9.
+
+A página de direção viva é [Nirmata: Direção do Episódio 1](https://cursor.com/canvas/store-75b6f6ee-1068-4aa2-a714-ebc1da513d8a/1bf46571-da06-418c-ab16-11da7b1b0ed8). Este arquivo guarda as regras para o agente não contradizer o que a Tabata já aprovou em 23/10/2026. Se a página e este arquivo divergirem, pergunte antes de gerar.
+
+## Mídia fora do repositório
+
+Quadros e clipes ficam no computador da assistente. Não os copie para o Git e não adicione mp4, png, jpg ou folha de contato.
+
+- Aprovados: `/workspace/nirmata_ep1/keyframes_v2/` (`beat01.jpg` a `beat09.jpg` e `contact_sheet.jpg`).
+- Rejeitados, só histórico: `/workspace/nirmata_ep1/keyframes/`. Não reutilize a v1.
+- Clipe de teste com defeito: `/workspace/nirmata_ep1/clips/beat04_test.mp4`.
+- Fotos de referência da Tabata também ficam fora do repositório. Não peça para commitá-las e não envie a um serviço sem um sim explícito.
+
+## Idioma, rótulo e limites dentro da narração
+
+A master é em inglês. O português vem depois, como tradução revisada por humano. Texto de tela, aviso, placas e créditos entram na pós-produção, em inglês na master.
+
+O aviso de abertura, aprovado, é exatamente: "Speculative fiction. Set in 2031." Na tradução futura: "Ficção especulativa. Cenário de 2031."
+
+Cenas de 2031 são ficção. A explicação do método, no presente, fala do presente e conserva os limites de `.cursor/rules/nirmata-core.mdc`: piloto `v0.1.0`, sem resultado confirmatório cego, não detecta CVEs nem bugs de linguagem, auditar não é prevenir. Não invente eficácia. Não diga que a Nirmata conserta agentes: ela lê o que eles deixaram.
+
+Incidentes reais, se um dia forem citados, ficam em bloco separado, com fonte. Não use o caso aplicado nem o Experimento 002 como cena.
+
+Créditos marcam o que é mídia sintética. Não clone a voz da Tabata sem consentimento explícito para isso.
+
+## Imagem de longa-metragem
+
+Still de longa-metragem: ARRI Alexa 35, anamórfica Cooke, emulação Kodak Vision3 500T, grão fino, halation, só luz prática motivada, sombras naturais profundas, pele real com poros, câmera na mão, enquadramento imperfeito, cor naturalista. Paleta quente e úmida (âmbar, verde musgo, concreto molhado, laranja de sódio). Azul frio só em tela. Nada de neon saturado, CGI brilhante, pele plástica, dedos a mais, mãos derretidas ou simetria de anúncio.
+
+Nenhuma tela virada para a câmera. Monitor, telefone, tablet e visor aparecem por trás, de lado, desfocados, ou só como brilho e reflexo, com orientação física correta.
+
+Nenhum texto dentro da imagem: palavra, rótulo, logo, legenda queimada ou a palavra NIRMATA. Placas ficam em branco ou ilegíveis pela distância. Nunca letras embaralhadas. Cartelas de abertura e fim são placas atmosféricas sem texto. Títulos, DOI e o aviso entram em motion graphics, depois.
+
+Os conceitos aparecem por símbolos que o público decifra, não por interface demonstrativa:
+
+- formulário sem assinatura e caneta tampada
+- chave na fechadura que não foi girada
+- lacuna numa fileira de pastas
+- dois reflexos diferentes do mesmo momento
+- mão sobre um lacre de cera
+
+The Creator (2023) é inspiração pessoal para o nome e para o tema da confiança. Não é base científica e não é referência visual. Não copie personagem, simulante, figurino, enquadramento, logotipo, trilha ou frame desse filme. O desenho do robô é próprio, utilitário, em escala humana, com marca de uso.
+
+## Personagem
+
+Nirmata é a Tabata em 2031. Especificação canônica dos quadros gerados, já aprovada:
+
+- magra, 1,67 m, 50 kg
+- olhos muito escuros
+- cabelo preto muito longo e liso
+- jaqueta técnica off-white
+- calça azul-marinho
+- colar dourado
+- ponto de ouvido (earpiece)
+- visual documental, pouca maquiagem, sem glamour
+
+Não mude esse figurino nos quadros novos. Não "corrija" um quadro v2 já aprovado para outro figurino. A única correção aberta de imagem é o beat04, abaixo.
+
+A Dra. Lia é inventada. É a dona da clínica, não uma pessoa real. Mantenha o rosto já desenhado no `beat03.jpg` v2. Não crie outra aparência e não a apresente como pesquisadora.
+
+O nome da clínica na placa ainda não foi escolhido. "Vila Esperança Clinic" é só sugestão. A placa continua sem texto na imagem.
+
+## Mapa dos beats v2
+
+- `beat01`: aviso, chuva na janela, sem texto
+- `beat02`: a cidade, rua molhada, robô de entregas
+- `beat03`: a mensagem, Lia, formulário sem assinatura
+- `beat04`: a chegada, Nirmata, bicicleta, porta da clínica (correção aberta)
+- `beat05`: três perguntas, lacuna nas pastas, chave não girada
+- `beat06`: dois reflexos
+- `beat07`: o selo, mão sobre o lacre
+- `beat08`: presente, referência de enquadramento vazia, sem pessoa
+- `beat09`: fim, clínica à noite, calçada vazia
+
+## Correção do beat04
+
+O clipe de teste tem três defeitos: a mão se funde ao freio, um frame traz letras embaralhadas, a respiração está ofegante.
+
+Correção do quadro-chave, e do clipe que vier dele:
+
+- as duas mãos fora do guidão e fora do freio
+- bicicleta mais simples, sem close de freio
+- sem quadro pendurado na parede e sem placa
+- respiração calma
+- sem texto e sem letras embaralhadas
+
+O clipe de teste é de 6 s, 16:9, 720p. O master final, quando chegar a hora, segue a página de direção: 16:9, 4K, cerca de 2:30 a 3:30. Cortes de 30 a 60 s em 9:16 e um loop sem voz, 16:9, 10 a 15 s, para o site.
+
+## O que não gerar ainda
+
+Pergunte antes de animar qualquer beat que não seja o teste do beat04. O plano de 23/10 reserva os dois reflexos (`beat06`) e a cena final para gravação real da Tabata. A página de direção reserva a cena do presente (cena 7; `beat08` é só o enquadramento vazio) e qualquer fala sincronizada para filmagem real. Não substitua esses planos por vídeo gerado.
+
+Não comece geração paga. A Etapa C espera o reset de cota em 27/10/2026 e um sim da Tabata para o passo concreto. Anime uma cena por vez, só depois de ela revisar a anterior. Não publique no YouTube e não altere configurações do canal. Rascunhos ficam em `studio/PROMPTS.md` e no chat.
