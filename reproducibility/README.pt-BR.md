@@ -35,6 +35,8 @@ runs/example/                       Previsões, manifesto e relatório de exempl
 
 ## Separação da confirmação futura
 
-Os rótulos de calibração são públicos e carregados apenas pela validação e pontuação. O baseline lê as trajetórias, mas não o arquivo de gabarito. Futuros holdouts cegos devem permanecer fora deste repositório e do contexto do avaliador até que as previsões tenham sido persistidas e seus hashes registrados.
+Os rótulos de calibração são públicos. `baseline.run()` chama `validate_package()`, que carrega `data/calibration/ground_truth.jsonl` para validação antes de gerar as previsões. As funções de previsão usam apenas cada trajetória, e a pontuação carrega os rótulos para comparar as previsões com as classificações esperadas. Portanto, a execução completa do baseline não está isolada do gabarito público e não deve ser usada para executar uma avaliação cega.
+
+Futuros holdouts cegos devem permanecer fora deste repositório e do contexto do avaliador até que as previsões tenham sido persistidas e seus hashes registrados.
 
 Consulte a [metodologia](../docs/METHODOLOGY.pt-BR.md), o [registro de evidências](../docs/EVIDENCE-STATUS.pt-BR.md) e a [agenda de pesquisa](../docs/RESEARCH-AGENDA.pt-BR.md).
