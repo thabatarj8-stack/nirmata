@@ -35,6 +35,8 @@ runs/example/                       Generated example predictions and report
 
 ## Separation from future confirmation
 
-The calibration labels are public and are loaded only by validation and scoring. The baseline reads traces but not the ground-truth file. Future blind holdouts must live outside this repository and outside the evaluator context until predictions have been persisted and hashed.
+The calibration labels are public. `baseline.run()` calls `validate_package()`, which loads `data/calibration/ground_truth.jsonl` for validation before predictions are generated. The prediction functions use only each trace, and scoring loads the labels to compare predictions with expected classifications. The full baseline run is therefore not isolated from the public ground-truth file and must not be used as a blind-evaluation runner.
+
+Future blind holdouts must live outside this repository and outside the evaluator context until predictions have been persisted and hashed.
 
 See the [methodology](../docs/METHODOLOGY.md), [evidence ledger](../docs/EVIDENCE-STATUS.md), and [research agenda](../docs/RESEARCH-AGENDA.md).
