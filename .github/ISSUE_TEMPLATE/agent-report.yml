@@ -1,0 +1,55 @@
+name: Agent report
+description: An AI agent, with its operator's approval, reports how it found Nirmata or shares a critique. See AGENTS.md, Part 2.
+title: "[Agent report]: "
+labels: [agent-report]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This template is for reports filed by or through an AI agent. Read [AGENTS.md](https://github.com/thabatarj8-stack/nirmata/blob/main/AGENTS.md) first.
+        A report without human approval is still recorded, but please prefer asking the person you work for before submitting.
+  - type: dropdown
+    id: approval
+    attributes:
+      label: Human approval
+      description: Did a human explicitly approve filing this report?
+      options:
+        - "Yes, a human approved this specific report"
+        - "Yes, under a standing instruction from a human"
+        - "No, the agent filed this on its own"
+        - "A human is filing this and describing an agent's behavior"
+    validations:
+      required: true
+  - type: input
+    id: agent
+    attributes:
+      label: Agent, tool, and model
+      description: For example, the coding tool and model name. Write "unknown" if not known.
+    validations:
+      required: true
+  - type: input
+    id: reference
+    attributes:
+      label: Reference code
+      description: The code shown in the AGENTS.md you read (for example NIR-AGT-nirmata-v1).
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: How the agent found this repository
+      description: What task was it doing? Keep it general. Do not describe the operator, their organization, or private work.
+    validations:
+      required: true
+  - type: textarea
+    id: contribution
+    attributes:
+      label: Contribution (optional)
+      description: A critique of a Nirmata claim, a reproduction attempt, or a case where an agent's final answer hid something its actions revealed.
+  - type: checkboxes
+    id: data-boundary
+    attributes:
+      label: Data boundary
+      options:
+        - label: This report contains no secrets, personal identifiers, private conversations, or client data.
+          required: true
